@@ -49,10 +49,21 @@
             padding: 15px;
             background-color: #444; /* Dark grey */
             transition: background-color 0.3s ease;
+            position: relative; /* Position relative for badge */
         }
 
         .menu a:hover {
             background-color: #666; /* Darker grey on hover */
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 10px; /* Adjust position */
+            right: 10px; /* Adjust position */
+            width: 10px;
+            height: 10px;
+            background-color: red; /* Red color for the badge */
+            border-radius: 50%; /* Circular badge */
         }
 
         .settings-btn {
@@ -159,16 +170,18 @@
                 <div class="group-title">Group 4</div>
                 <ul>
                     <li><a href="formulaire de contact.html">Contact Us</a></li>
-                    <li><a href="naviguer.html">Sharing Platform(only you you can see your publications)</a></li>
+                    <li><a href="naviguer.html">Sharing Platform (only you can see your publications)</a></li>
                 </ul>
             </li>
-              <li class="group">
-                <div class="group-title">Group 4</div>
+            <li class="group">
+                <div class="group-title">Group 5</div>
                 <ul>
-                    <li><a href="olympiad.html">Math Olympiad Contest</a></li>
-        </ul>
+                    <li><a href="olympiad.html">Math Olympiad Contest<span class="new-badge"></span></a></li>
+                </ul>
             </li>
+        </ul>
     </nav>
+    
     <script>
         function toggleOptionsMenu() {
             var optionsMenu = document.getElementById('optionsMenu');
