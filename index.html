@@ -10,18 +10,17 @@
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
-            transition: background-color 0.3s ease; /* Transition for background color change */
+            transition: background-color 0.3s ease;
         }
 
         .menu {
             width: 100%;
             max-width: 400px;
             margin: 20px auto;
-            background-color: #1e1e1e; /* Dark background */
+            background-color: #1e1e1e;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            color: #fff; /* White text */
+            color: #fff;
         }
 
         .menu ul {
@@ -31,11 +30,11 @@
         }
 
         .menu li {
-            border-bottom: 1px solid #333; /* Darker grey */
+            border-bottom: 1px solid #333;
         }
 
         .menu .group-title {
-            background-color: #333; /* Darker grey */
+            background-color: #333;
             color: #fff;
             padding: 15px;
             font-weight: bold;
@@ -47,23 +46,12 @@
             color: #fff;
             display: block;
             padding: 15px;
-            background-color: #444; /* Dark grey */
+            background-color: #444;
             transition: background-color 0.3s ease;
-            position: relative; /* Position relative for badge */
         }
 
         .menu a:hover {
-            background-color: #666; /* Darker grey on hover */
-        }
-
-        .new-badge {
-            position: absolute;
-            top: 10px; /* Adjust position */
-            right: 10px; /* Adjust position */
-            width: 10px;
-            height: 10px;
-            background-color: red; /* Red color for the badge */
-            border-radius: 50%; /* Circular badge */
+            background-color: #666;
         }
 
         .settings-btn {
@@ -85,8 +73,8 @@
         }
 
         .settings-btn:hover {
-            background-color: #666; /* Darker grey on hover */
-            transform: scale(1.1); /* Scale effect on hover */
+            background-color: #666;
+            transform: scale(1.1);
         }
 
         .options-menu {
@@ -106,12 +94,12 @@
             display: block;
         }
 
-        .color-option {
+        .color-option, .bell-option {
             padding: 10px;
             cursor: pointer;
         }
 
-        .color-option:hover {
+        .color-option:hover, .bell-option:hover {
             background-color: #f0f0f0;
         }
 
@@ -129,6 +117,7 @@
         .send-alert-btn:hover {
             background-color: #cc0000;
         }
+
     </style>
 </head>
 <body>
@@ -139,6 +128,7 @@
         <div class="color-option" style="background-color: #0f0;" onclick="changeBackgroundColor('#0f0')">Green</div>
         <div class="color-option" style="background-color: #f00;" onclick="changeBackgroundColor('#f00')">Red</div>
         <div class="color-option" style="background-color: #fff; color: #000;" onclick="changeBackgroundColor('#fff')">White</div>
+        <div class="bell-option" onclick="showUpdateMessage()">🔔 Check for Updates</div>
         <button class="send-alert-btn" onclick="sendAlert()">Send Alert</button>
         <p style="font-size: 12px; color: #666; margin-top: 10px;">Version 2.0</p>
     </div>
@@ -170,7 +160,7 @@
                 <div class="group-title">Group 4</div>
                 <ul>
                     <li><a href="formulaire de contact.html">Contact Us</a></li>
-                    <li><a href="naviguer.html">Sharing Platform (only you can see your publications)</a></li>
+                    <li><a href="naviguer.html">Sharing Platform</a></li>
                 </ul>
             </li>
             <li class="group">
@@ -197,6 +187,10 @@
             var subject = encodeURIComponent('Send alert for upcoming competitions');
             var mailtoLink = 'mailto:' + emailAddress + '?subject=' + subject;
             window.location.href = mailtoLink;
+        }
+
+        function showUpdateMessage() {
+            alert("There is a simple update that does not require a version change. A design update has been made, and a page containing the Math Olympiad Contest has been added.");
         }
     </script>
 </body>
