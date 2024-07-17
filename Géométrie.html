@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><span style="color: #4aa3df;">C</span><span style="color: #6a5a2f;">o</span><span style="color: #4a4a1f;">m</span><span style="color: #4aa3df;">p</span><span style="color: #6a5a2f;">l</span><span style="color: #4a4a1f;">e</span><span style="color: #4aa3df;">x</span><span style="color: #6a5a2f;"> </span><span style="color: #4a4a1f;">G</span><span style="color: #4aa3df;">e</span><span style="color: #6a5a2f;">o</span><span style="color: #4a4a1f;">m</span><span style="color: #4aa3df;">e</span><span style="color: #6a5a2f;">t</span><span style="color: #4a4a1f;">r</span><span style="color: #4aa3df;">y</span></title>
+    <title>Complex Geometry</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #222;
-            color: #fff;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -21,22 +23,29 @@
         }
 
         .problem {
-            background-color: #4a4a1f;
-            border: 1px solid #3a3a1f;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
             margin-bottom: 20px;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .problem:hover {
+            background-color: #e9ecef;
         }
 
         .statement {
-            background-color: #6a5a2f;
+            background-color: #d1ecf1;
             padding: 10px;
             margin-top: 10px;
             border-radius: 5px;
+            font-size: 18px;
         }
 
         nav {
-            background-color: #333;
+            background-color: #343a40;
             padding: 10px;
         }
 
@@ -50,55 +59,40 @@
             text-decoration: underline;
         }
 
-        .trapezoid {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 100px;
-            height: 50px;
-            background-color: #4aa3df;
-            transform: skew(-20deg);
-            z-index: 1000;
-        }
         .title {
             text-align: center;
             margin-top: 50px;
             font-size: 36px;
             font-weight: bold;
+            color: #007bff;
         }
-        .letter {
-            display: inline-block;
-            position: relative;
-            font-size: 48px;
-            --char-color: #fff; /* Default color of letters */
-            color: var(--char-color);
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        button{
-            font-size: 24px;
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
 <body>
-    <div class="title">
-        <span class="letter" style="--char-color: #ff4a4a;">C</span>
-        <span class="letter" style="--char-color: #4aff73;">o</span>
-        <span class="letter" style="--char-color: #4aff73;">m</span>
-        <span class="letter" style="--char-color: #4a4aff;">p</span>
-        <span class="letter" style="--char-color: #ffcc4a;">l</span>
-        <span class="letter" style="--char-color: #4affff;">e</span>
-        <span class="letter" style="--char-color: #ff4aff;">x</span>
-        <span class="letter" style="--char-color: #4affff;"> </span>
-        <span class="letter" style="--char-color: #4a4a1f;">G</span>
-        <span class="letter" style="--char-color: #4aa3df;">e</span>
-        <span class="letter" style="--char-color: #6a5a2f;">o</span>
-        <span class="letter" style="--char-color: #4a4a1f;">m</span>
-        <span class="letter" style="--char-color: #4aa3df;">e</span>
-        <span class="letter" style="--char-color: #6a5a2f;">t</span>
-        <span class="letter" style="--char-color: #4a4a1f;">r</span>
-        <span class="letter" style="--char-color: #4aa3df;">y</span>
-    </div>
+    <div class="title">Complex Geometry</div>
     <div class="container">
-        <div class="trapezoid"></div>
         <div class="problem">
             <div class="statement">
                 Let ABC be a triangle such that \( AB \neq AC \) and \( \angle BAC \neq 90^\circ \). Let M and N be the midpoints of segments [AB] and [AC], respectively. Let E and F be the feet of the altitudes from vertices B and C, respectively. Let O be the center of the circumcircle of triangle ABC and let H be the orthocenter of triangle ABC. The tangent to the circumcircle of triangle ABC at A intersects line (MN) at point P. Let Q be the second point of intersection of the circumcircles of triangles ABC and AEF. Lines (EF) and (AQ) intersect at point R. Show that lines (OH) and (PR) are perpendicular.
