@@ -10,45 +10,70 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #222;
-            color: #fff;
+            background-color: #fafafa;
+            color: #333;
         }
 
         .container {
             margin: 0 auto;
             padding: 20px;
             max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .probleme {
-            background-color: #4a4a1f;
-            border: 1px solid #3a3a1f;
+            background-color: #e7e7e7;
+            border: 1px solid #ccc;
             margin-bottom: 20px;
-            padding: 10px;
+            padding: 20px;
             border-radius: 5px;
         }
 
         .enonce {
-            background-color: #6a5a2f;
-            padding: 10px;
+            background-color: #fff;
+            padding: 15px;
             margin-top: 10px;
             border-radius: 5px;
+            border: 1px solid #ddd;
         }
+
         .title {
             text-align: center;
             margin-top: 50px;
             font-size: 36px;
             font-weight: bold;
+            color: #0073e6;
         }
+
         .letter {
             display: inline-block;
             position: relative;
             font-size: 48px;
-            --char-color: #fff; /* Default color for letters */
+            --char-color: #333; /* Default color for letters */
             color: var(--char-color);
         }
-        button{
-            font-size: 24px;
+
+        button {
+            font-size: 18px;
+            background-color: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: #005bb5;
+        }
+
+        button a {
+            color: #fff;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -125,16 +150,16 @@
         <div class="probleme">
             <div class="enonce">
                 Initially, each of the six boxes \( B1, B2, B3, B4, B5, B6 \) contains one token. Two types of operations are possible:
-                <ul>
+                
+           <ul>
                     <li>Type 1: Choose a non-empty box \( B_j \) with \( 1 \leq j \leq 5 \); remove one token from box \( B_j \) and add two tokens to box \( B_{j+1} \).</li>
                     <li>Type 2: Choose a non-empty box \( B_k \) with \( 1 \leq k \leq 4 \); remove one token from box \( B_k \) and swap the contents (potentially empty) of boxes \( B_{k+1} \) and \( B_{k+2} \).</li>
                 </ul>
-                Is it possible, after a finite number of such operations, for boxes \(
-                    B1, B2, B3, B4, B5 \) to be empty and box \( B6 \) to contain exactly \( 2010^{2010^{2010}} \) tokens?
-                </div>
+                Is it possible, after a finite number of such operations, for boxes \( B1, B2, B3, B4, B5 \) to be empty and box \( B6 \) to contain exactly \( 2010^{2010^{2010}} \) tokens?
             </div>
         </div>
-        <button><a href="formulaire de contact.html">Submit your solutions</a></button>
-    </body>
-    </html>
+    </div>
+    <button><a href="formulaire_de_contact.html">Submit your solutions</a></button>
+</body>
+</html>
     
