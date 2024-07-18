@@ -77,6 +77,21 @@
             transform: scale(1.1);
         }
 
+        .badge {
+            position: fixed;
+            top: 5px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .options-menu {
             display: none;
             position: fixed;
@@ -121,6 +136,7 @@
     </style>
 </head>
 <body>
+    <span class="badge">1</span>
     <button class="settings-btn" onclick="toggleOptionsMenu()">⚙️</button>
 
     <div class="options-menu" id="optionsMenu">
@@ -130,7 +146,8 @@
         <div class="color-option" style="background-color: #fff; color: #000;" onclick="changeBackgroundColor('#fff')">White</div>
         <div class="bell-option" onclick="showUpdateMessage()">🔔 Check for Updates</div>
         <button class="send-alert-btn" onclick="sendAlert()">Send Alert</button>
-        <p style="font-size: 12px; color: #666; margin-top: 10px;">Version 2.0</p>
+        <p style="font-size: 12px; color: #666; margin-top: 10px;">new forum added 🆕</p>
+        <p style="font-size: 12px; color: #666; margin-top: 10px;">Version 2.1</p>
     </div>
 
     <nav class="menu">
@@ -140,8 +157,7 @@
                 <ul>
                     <li><a href="contact.html">About Us</a></li>
                     <li><a href="Signaler un probléme.html">Privacy rule</a></li>
-                      <li><a href="information.html">Install the math application of this site</a></li>
-                    
+                    <li><a href="information.html">Install the math application of this site</a></li>
                 </ul>
             </li>
             <li class="group">
@@ -193,8 +209,9 @@
         }
 
         function showUpdateMessage() {
-            alert("There is a simple update that does not require a version change. A design update has been made, and a page containing the Math Olympiad Contest has been added.");
+            alert("There is a simple update that does not require a version change. A design update has been made, and a page containing the Math Olympiad Contest has been added. A new forum section has also been added.");
         }
     </script>
 </body>
 </html>
+
