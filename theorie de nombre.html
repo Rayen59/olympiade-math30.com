@@ -9,11 +9,13 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            background: linear-gradient(135deg, #ff8a00, #e52e71, #ff0081);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #333;
         }
 
         .title {
@@ -21,36 +23,43 @@
             margin-top: 50px;
             font-size: 40px;
             font-weight: bold;
-            color: #007BFF;
+            background: linear-gradient(45deg, #ff6f61, #ffcc00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+            animation: shimmer 2s infinite;
         }
 
         .container {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
+            background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .probleme {
-            background-color: #e7f3ff;
-            border: 1px solid #007BFF;
+            background: linear-gradient(135deg, #ff9a8b, #ff6f61);
+            border: 1px solid #ff6f61;
             margin-bottom: 20px;
             padding: 15px;
             border-radius: 8px;
-            transition: background-color 0.3s;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
         .probleme:hover {
-            background-color: #d0e9ff;
+            background: linear-gradient(135deg, #ff6f61, #ff9a8b);
+            transform: scale(1.02);
+            box-shadow: 0 8px 15px rgba(255, 105, 135, 0.5);
         }
 
         .enonce {
-            background-color: #d1ecf1;
+            background-color: #fff;
             padding: 10px;
             border-radius: 5px;
             font-size: 18px;
+            color: #333;
         }
 
         button {
@@ -58,21 +67,37 @@
             margin: 20px auto;
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #28a745;
+            background: linear-gradient(45deg, #00bcd4, #ffeb3b);
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
 
         button:hover {
-            background-color: #218838;
+            background: linear-gradient(45deg, #ffeb3b, #00bcd4);
+            transform: scale(1.05);
         }
 
         a {
             text-decoration: none;
             color: inherit;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
         }
     </style>
 </head>
