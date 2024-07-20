@@ -9,7 +9,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
+            background: linear-gradient(45deg, #ff0066, #ffcc00, #00cc99, #0066ff);
+            background-size: 400% 400%;
+            animation: gradientBackground 20s ease infinite;
             color: #fff;
             display: flex;
             justify-content: center;
@@ -20,26 +22,67 @@
 
         .credits {
             text-align: center;
-            font-size: 24px;
-            line-height: 1.6;
-            animation: scroll 88s linear infinite;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            animation: scroll 70s linear infinite;
         }
 
         @keyframes scroll {
             0% { transform: translateY(100%); }
             100% { transform: translateY(-100%); }
         }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        p, ol {
+            margin: 10px 0;
+        }
+
+        ol {
+            text-align: left;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #00ccff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="credits">
-        <p><strong>Website Name: Mathematics Olympiad</strong></p>
-        <p>Creator: Med Rayen Bouazizi</p>
-        <p>Developer: Med Rayen Bouazizi</p>
-        <p>Designer: Med Rayen Bouazizi</p>
-        <p>Administrator: Med Rayen Bouazizi</p>
-        <p>Technical Support: Med Rayen Bouazizi</p>
-        <p>Marketing: Med Rayen Bouazizi</p>
+        <h1>Mathematics Olympiad</h1>
+        <p><strong>Creator:</strong> Med Rayen Bouazizi</p>
+        <p><strong>Developer:</strong> Med Rayen Bouazizi</p>
+        <p><strong>Designer:</strong> Med Rayen Bouazizi</p>
+        <p><strong>Administrator:</strong> Med Rayen Bouazizi</p>
+        <p><strong>Technical Support:</strong> Med Rayen Bouazizi</p>
+        <p><strong>Marketing:</strong> Med Rayen Bouazizi</p>
         <p>Thank you for visiting our website!</p>
         <p>A website dedicated to creating and solving Olympiad-level mathematical problems, committed to offering stimulating and enriching resources for mathematics enthusiasts. This site provides a wide range of problems designed to test and develop students' analytical and logical skills, ranging from intermediate to advanced levels. Each problem is carefully crafted to reflect challenges encountered in international competitions. Additionally, the site offers detailed solutions and step-by-step explanations, allowing users to understand the methods and strategies used to solve these complex problems. By fostering an interactive and educational environment, this site aims to inspire and prepare aspiring mathematicians for future mathematical Olympiad challenges.</p>
         <p>The website could be organized around several key chapters, each dedicated to a specific area of mathematical Olympiads:</p>
@@ -50,7 +93,7 @@
             <li><strong>Geometry:</strong> Topics covered include Euclidean geometry, circles, triangles and polygons, geometric transformations, and coordinate geometry. Geometric problems are often visual and require a deep understanding of figure properties and spatial relationships.</li>
         </ol>
         <p>Each chapter would be enriched with a variety of problems of increasing difficulty, from basic exercises to Olympiad challenges, with detailed solutions to help students progress and refine their skills.</p>
-        <p>To contact us, please send a message to: matholympiad40@gmail.com</p>
+        <p>To contact us, please send a message to: <a href="mailto:matholympiad40@gmail.com">matholympiad40@gmail.com</a></p>
     </div>
 </body>
 </html>
