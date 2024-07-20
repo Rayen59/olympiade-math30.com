@@ -10,8 +10,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fafafa;
+            background: linear-gradient(135deg, #f06, #f9c, #f39);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
             color: #333;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -74,6 +78,12 @@
         button a {
             color: #fff;
             text-decoration: none;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
         }
     </style>
 </head>
@@ -151,7 +161,7 @@
             <div class="enonce">
                 Initially, each of the six boxes \( B1, B2, B3, B4, B5, B6 \) contains one token. Two types of operations are possible:
                 
-           <ul>
+                <ul>
                     <li>Type 1: Choose a non-empty box \( B_j \) with \( 1 \leq j \leq 5 \); remove one token from box \( B_j \) and add two tokens to box \( B_{j+1} \).</li>
                     <li>Type 2: Choose a non-empty box \( B_k \) with \( 1 \leq k \leq 4 \); remove one token from box \( B_k \) and swap the contents (potentially empty) of boxes \( B_{k+1} \) and \( B_{k+2} \).</li>
                 </ul>
@@ -162,4 +172,5 @@
     <button><a href="formulaire de contact.html">Submit your solutions</a></button>
 </body>
 </html>
+
     
