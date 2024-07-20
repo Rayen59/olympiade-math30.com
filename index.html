@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vertical Menu</title>
     <style>
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff00ff, #00ffff, #ffff00);
+            background-size: 600% 600%;
+            animation: gradientBackground 16s ease infinite;
             transition: background-color 0.3s ease;
         }
 
@@ -30,11 +38,11 @@
         }
 
         .menu li {
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #0056b3; /* Updated border color to blue */
         }
 
         .menu .group-title {
-            background-color: #333;
+            background-color: #0056b3; /* Updated background color to blue */
             color: #fff;
             padding: 15px;
             font-weight: bold;
@@ -46,12 +54,12 @@
             color: #fff;
             display: block;
             padding: 15px;
-            background-color: #444;
+            background-color: #007bff; /* Updated background color to blue */
             transition: background-color 0.3s ease;
         }
 
         .menu a:hover {
-            background-color: #666;
+            background-color: #0056b3; /* Updated hover color to darker blue */
         }
 
         .settings-btn {
@@ -214,4 +222,5 @@
     </script>
 </body>
 </html>
+
 
