@@ -6,11 +6,13 @@
     <title>Functional Equations Problems - International Olympiad</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #222;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #222, #333);
             color: #fff;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
+            transition: background 0.5s ease;
         }
         .container {
             width: 80%;
@@ -18,62 +20,77 @@
             overflow: hidden;
         }
         header {
-            background: #333;
+            background: linear-gradient(135deg, #77A6F7, #5588EE);
             color: #fff;
-            padding-top: 30px;
+            padding: 30px 0;
             min-height: 70px;
-            border-bottom: #77A6F7 3px solid;
+            border-bottom: 3px solid #fff;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background 0.5s ease, box-shadow 0.5s ease;
         }
         header h1 {
             margin: 0;
             padding: 0 20px;
+            font-size: 2.5em;
         }
         .problems {
             padding: 20px;
-            background: #444;
+            background: rgba(255, 255, 255, 0.1);
             margin: 20px 0;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: background 0.5s ease, box-shadow 0.5s ease;
         }
         .problem {
             margin-bottom: 20px;
-            background: #555;
+            background: rgba(255, 255, 255, 0.2);
             padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
         .problem h3 {
             margin-bottom: 10px;
-            color: #fff;
+            color: #ffcc00;
+            font-size: 1.5em;
         }
         .problem p {
             color: #ddd;
+            font-size: 1.2em;
         }
         button {
             display: block;
-            width: 200px;
+            width: 220px;
             margin: 20px auto;
-            padding: 10px;
-            background-color: #77A6F7;
+            padding: 12px;
+            background: linear-gradient(135deg, #77A6F7, #5588EE);
             color: #fff;
             border: none;
-            border-radius: 5px;
-            font-size: 18px;
+            border-radius: 8px;
+            font-size: 1.2em;
             cursor: pointer;
             text-decoration: none;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
         button:hover {
-            background-color: #5588EE;
+            background: linear-gradient(135deg, #5588EE, #77A6F7);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
         a {
             color: #fff;
             text-decoration: none;
         }
-        button{
-            font-size: 24px;
+        /* Animation for header */
+        @keyframes headerAnimation {
+            0% { background: linear-gradient(135deg, #77A6F7, #5588EE); }
+            50% { background: linear-gradient(135deg, #5588EE, #77A6F7); }
+            100% { background: linear-gradient(135deg, #77A6F7, #5588EE); }
+        }
+        header {
+            animation: headerAnimation 10s infinite alternate;
         }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -142,3 +159,6 @@
     <button><a href="formulaire de contact.html">Submit Your Solutions</a></button>
 </body>
 </html>
+
+
+
