@@ -62,14 +62,13 @@
             background-color: #0056b3; /* Updated hover color to darker blue */
         }
 
-        .settings-btn {
+        .logo {
             position: fixed;
             top: 20px;
             right: 20px;
             width: 50px;
             height: 50px;
             background-color: #444;
-            border: none;
             border-radius: 50%;
             color: #fff;
             font-size: 24px;
@@ -78,9 +77,10 @@
             cursor: pointer;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1000; /* Ensure it stays on top of other content */
         }
 
-        .settings-btn:hover {
+        .logo:hover {
             background-color: #666;
             transform: scale(1.1);
         }
@@ -145,7 +145,7 @@
         .side-panel {
             position: fixed;
             top: 0;
-            left: -50%; /* Initially hidden off-screen */
+            left: -100%; /* Completely hidden off-screen */
             width: 50%;
             height: 100%;
             background-color: #333;
@@ -198,7 +198,7 @@
 </head>
 <body>
     <span class="badge">2+</span>
-    <button class="settings-btn" onclick="toggleOptionsMenu()">⚙️</button>
+    <button class="logo" onclick="toggleSidePanel()">☰</button>
 
     <div class="options-menu" id="optionsMenu">
         <div class="color-option" style="background-color: #00f;" onclick="changeBackgroundColor('#00f')">Blue</div>
@@ -257,7 +257,7 @@
     <div class="side-panel" id="sidePanel">
         <h2>Updates</h2>
         <p>The forum has been successfully created, and a chatbot has been added. There has also been a design change and a relaunch with new colors.</p>
-        <p>Quantum nexus Labs</p>
+        <p>Quantum Nexus Labs</p>
         <h2>Additional Pages</h2>
         <ul>
             <li><a href="yeeeeeees.html">"Alert & Issue Reporting Page"</a></li>
@@ -266,8 +266,6 @@
             <li><a href="nqth.html">"Language Availability and Future Enhancements"</a></li>
         </ul>
     </div>
-
-    <button class="settings-btn" onclick="toggleSidePanel()">☰</button>
 
     <script>
         function toggleOptionsMenu() {
@@ -297,3 +295,5 @@
     </script>
 </body>
 </html>
+
+
