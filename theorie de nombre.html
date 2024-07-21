@@ -3,225 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number Theory Olympiad</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Vertical Menu with Sliding Panel</title>
     <style>
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #ff8a00, #e52e71, #ff0081);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
-            color: #333;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff00ff, #00ffff, #ffff00);
+            background-size: 600% 600%;
+            animation: gradientBackground 16s ease infinite;
+            transition: background-color 0.3s ease;
         }
 
-        .title {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 40px;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff6f61, #ffcc00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-            animation: shimmer 2s infinite;
-        }
-
-        .container {
-            max-width: 900px;
+        .menu {
+            width: 100%;
+            max-width: 400px;
             margin: 20px auto;
-            padding: 20px;
-            background: #fff;
+            background-color: #1e1e1e;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            color: #fff;
         }
 
-        .probleme {
-            background: linear-gradient(135deg, #ff9a8b, #ff6f61);
-            border: 1px solid #ff6f61;
-            margin-bottom: 20px;
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            border-bottom: 1px solid #0056b3; /* Updated border color to blue */
+        }
+
+        .menu .group-title {
+            background-color: #0056b3; /* Updated background color to blue */
+            color: #fff;
             padding: 15px;
-            border-radius: 8px;
-            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
         }
 
-        .probleme:hover {
-            background: linear-gradient(135deg, #ff6f61, #ff9a8b);
-            transform: scale(1.02);
-            box-shadow: 0 8px 15px rgba(255, 105, 135, 0.5);
-        }
-
-        .enonce {
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 18px;
-            color: #333;
-        }
-
-        button {
+        .menu a {
+            text-decoration: none;
+            color: #fff;
             display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 18px;
-            background: linear-gradient(45deg, #00bcd4, #ffeb3b);
+            padding: 15px;
+            background-color: #007bff; /* Updated background color to blue */
+            transition: background-color 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #0056b3; /* Updated hover color to darker blue */
+        }
+
+        .settings-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #444;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .settings-btn:hover {
+            background-color: #666;
+            transform: scale(1.1);
+        }
+
+        .badge {
+            position: fixed;
+            top: 5px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .options-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 200px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .options-menu.active {
+            display: block;
+        }
+
+        .color-option, .bell-option {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .color-option:hover, .bell-option:hover {
+            background-color: #f0f0f0;
+        }
+
+        .send-alert-btn {
+            background-color: #ff0000;
             color: #fff;
             border: none;
-            border-radius: 5px;
+            padding: 10px 20px;
             cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
         }
 
-        button:hover {
-            background: linear-gradient(45deg, #ffeb3b, #00bcd4);
-            transform: scale(1.05);
+        .send-alert-btn:hover {
+            background-color: #cc0000;
         }
 
-        a {
+        /* Side Panel Styles */
+        .side-panel {
+            position: fixed;
+            top: 0;
+            left: -50%; /* Initially hidden off-screen */
+            width: 50%;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            transition: left 0.3s ease;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .side-panel.active {
+            left: 0; /* Slide in from the left */
+        }
+
+        .side-panel h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .side-panel p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+
+        .side-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .side-panel ul li {
+            margin: 10px 0;
+        }
+
+        .side-panel ul li a {
+            color: #fff;
             text-decoration: none;
-            color: inherit;
+            display: block;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-            100% {
-                background-position: 200% 0;
-            }
+        .side-panel ul li a:hover {
+            background-color: #666;
         }
     </style>
 </head>
 <body>
-    <div class="title">Number Theory Olympiad</div>
+    <span class="badge">2+</span>
+    <button class="settings-btn" onclick="toggleOptionsMenu()">⚙️</button>
 
-    <div class="container">
-        <div class="probleme">
-            <div class="enonce">
-                Show that the fraction \( \frac{21n + 4}{14n + 3} \) is irreducible for all \( n \in \mathbb{N} \).
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Prove the divisibility criterion by 17: The number \( \overline{a_n a_{n-1} \ldots a_1 a_0} \) is divisible by 17 if and only if the number \( \overline{a_n a_{n-1} \ldots a_1} - 5a_0 \) is divisible by 17.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Prove that if \( p \) and \( p^2 + 8 \) are primes, then \( p^3 + 8p + 2 \) is also prime.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                How many natural numbers that are multiples of 15 have exactly 15 positive divisors?
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Find all pairs of integers \( (x, y) \) satisfying the equation \( x^4 - y^2 = 17 \).
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Show that if a prime number \( p \) is divided by 30, then the remainder is either 1 or a prime number. Is the same true when the divisor is 60 or 90?
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Let \( m \) and \( n \) be non-zero natural numbers such that \( mn + 1 \) is divisible by 24. Show that \( m + n \) is also divisible by 24.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Let \( a \) and \( b \) be distinct natural numbers. Show that there are infinitely many natural numbers \( s \) such that \( a + s \) and \( b + s \) are coprime.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Give an example of a composite number whose decimal representation contains exactly 1994 digits "1" and one "7" (and no other digits).
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Show that there exist no \( x, y \in \mathbb{Q} \) such that \( x^2 + y^2 = 3 \).
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Let \( n \in \mathbb{N}_0 \). Show that if \( 2^n - 1 \) is prime, then \( n \) is prime. Show that if \( 2^n + 1 \) is prime, then \( n \) is a power of 2.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                For every positive integer \( n \), find the remainder when \( \frac{(7n)!}{7^n \cdot n!} \) is divided by 7.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Find the smallest positive integer \( a \) such that 1971 divides \( 50^n + a \cdot 23^n \) for every odd \( n \).
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Determine the greatest common divisor of all numbers of the form \( p^8 - 1 \), where \( p \) is a prime greater than 5.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Find the number of pairs of positive integers \( x, y \) with \( x \leq y \) such that \( \gcd(x, y) = 5! \) and \( \mathrm{lcm}(x, y) = 50! \).
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Prove Wilson's theorem: A number \( p \geq 2 \) is prime if and only if \( (p - 1)! \equiv -1 \mod p \).
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Find two positive integers \( a \) and \( b \) such that \( (a + b)^7 - a^7 - b^7 \) is divisible by 77 but \( ab(a + b) \) is not divisible by 7.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Find all right triangles where the hypotenuse has an integer length and the other two sides have lengths that are perfect squares.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                If \( p \) and \( q \) are prime numbers, and \( x \in \mathbb{Z} \) such that \( q \mid (x^{p-1} + x^{p-2} + \ldots + x + 1) \), then show that \( p = q \) or \( p \) divides \( q - 1 \).
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Determine all positive integers \( n \) such that \( 2^n - 1 \cdot n + 1 \) is a perfect square.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Show that there are infinitely many non-zero natural numbers \( n \) such that the number \( \frac{1^2 + 2^2 + \ldots + n^2}{n} \) is a perfect square. Clearly, \( 1 \) is the smallest number with this property. Find the next two smallest numbers with this property.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Call an integer \( n \) faithful if there exist positive integers \( a < b < c \) such that \( a \) divides \( b \), \( b \) divides \( c \), and \( n = a + b + c \). Find all unfaithful numbers.
-            </div>
-        </div>
-        <div class="probleme">
-            <div class="enonce">
-                Let \( p_1, p_2, \ldots, p_n \) be distinct prime numbers greater than 3. Show that \( 2p_1p_2\ldots p_n + 1 \) has at least \( 4n \) divisors.
-            </div>
-        </div>
+    <div class="options-menu" id="optionsMenu">
+        <div class="color-option" style="background-color: #00f;" onclick="changeBackgroundColor('#00f')">Blue</div>
+        <div class="color-option" style="background-color: #0f0;" onclick="changeBackgroundColor('#0f0')">Green</div>
+        <div class="color-option" style="background-color: #f00;" onclick="changeBackgroundColor('#f00')">Red</div>
+        <div class="color-option" style="background-color: #fff; color: #000;" onclick="changeBackgroundColor('#fff')">White</div>
+        <div class="bell-option" onclick="showUpdateMessage()">🔔 Check for Updates</div>
+        <button class="send-alert-btn" onclick="sendAlert()">Send Alert</button>
+        <p style="font-size: 12px; color: #666; margin-top: 10px;">new forum added 🆕</p>
+        <p style="font-size: 12px; color: #666; margin-top: 10px;">Version 2.1</p>
     </div>
-    <button><a href="formulaire de contact.html">Submit your solutions</a></button>
+
+    <nav class="menu">
+        <ul>
+            <li class="group">
+                <div class="group-title">Group 1</div>
+                <ul>
+                    <li><a href="contact.html">About Us</a></li>
+                    <li><a href="Signaler un probléme.html">Privacy rule</a></li>
+                    <li><a href="information.html">Install the math application of this site</a></li>
+                </ul>
+            </li>
+            <li class="group">
+                <div class="group-title">Group 2</div>
+                <ul>
+                    <li><a href="Géométrie.html">Geometry</a></li>
+                    <li><a href="Combinatoire.html">Combinatorics</a></li>
+                </ul>
+            </li>
+            <li class="group">
+                <div class="group-title">Group 3</div>
+                <ul>
+                    <li><a href="Equation fonctionnel.html">Functional Equation</a></li>
+                    <li><a href="theorie de nombre.html">Number Theory</a></li>
+                </ul>
+            </li>
+            <li class="group">
+                <div class="group-title">Group 4</div>
+                <ul>
+                    <li><a href="formulaire de contact.html">Contact Us</a></li>
+                    <li><a href="naviguer.html">Sharing Platform</a></li>
+                </ul>
+            </li>
+            <li class="group">
+                <div class="group-title">Group 5</div>
+                <ul>
+                    <li><a href="olympiad.html">Math Olympiad Contest<span class="new-badge"></span></a></li>
+                    <li><a href="forum.html">Forum<span class="new-badge"></span></a></li>
+                    <li><a href="https://chat.dante-ai.com/" target="_blank">Artificial Intelligence Chat (Math)<span class="new-badge"></span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Sliding Panel -->
+    <div class="side-panel" id="sidePanel">
+        <h2>Updates</h2>
+        <p>The forum has been successfully created, and a chatbot has been added. There has also been a design change and a relaunch with new colors.</p>
+        <p>Quantum nexus Labs</p>
+        <h2>Additional Pages</h2>
+        <ul>
+            <li><a href="yeeeeeees.html">"Alert & Issue Reporting Page"</a></li>
+            <li><a href="rqyen.html">About Me</a></li>
+            <li><a href="yes.html">"Application Policy and Privacy Guidelines"</a></li>
+            <li><a href="nqth.html">"Language Availability and Future Enhancements"</a></li>
+        </ul>
+    </div>
+
+    <button class="settings-btn" onclick="toggleSidePanel()">☰</button>
+
+    <script>
+        function toggleOptionsMenu() {
+            var optionsMenu = document.getElementById('optionsMenu');
+            optionsMenu.classList.toggle('active');
+        }
+
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        function sendAlert() {
+            var emailAddress = 'matholympiad40@gmail.com';
+            var subject = encodeURIComponent('Send alert for upcoming competitions');
+            var mailtoLink = 'mailto:' + emailAddress + '?subject=' + subject;
+            window.location.href = mailtoLink;
+        }
+
+        function showUpdateMessage() {
+            alert("There is a simple update that does not require a version change. A design update has been made, and a page containing the Math Olympiad Contest has been added. A new forum section has also been added.");
+        }
+
+        function toggleSidePanel() {
+            var sidePanel = document.getElementById('sidePanel');
+            sidePanel.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
 
