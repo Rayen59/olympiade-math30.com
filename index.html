@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Menu</title>
+    <title>Vertical Menu with Sliding Panel</title>
     <style>
         @keyframes gradientBackground {
             0% { background-position: 0% 50%; }
@@ -141,6 +141,59 @@
             background-color: #cc0000;
         }
 
+        /* Side Panel Styles */
+        .side-panel {
+            position: fixed;
+            top: 0;
+            left: -50%; /* Initially hidden off-screen */
+            width: 50%;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            transition: left 0.3s ease;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .side-panel.active {
+            left: 0; /* Slide in from the left */
+        }
+
+        .side-panel h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .side-panel p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+
+        .side-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .side-panel ul li {
+            margin: 10px 0;
+        }
+
+        .side-panel ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .side-panel ul li a:hover {
+            background-color: #666;
+        }
     </style>
 </head>
 <body>
@@ -199,7 +252,23 @@
             </li>
         </ul>
     </nav>
-    
+
+    <!-- Sliding Panel -->
+    <div class="side-panel" id="sidePanel">
+        <h2>Updates</h2>
+        <p>The forum has been successfully created, and a chatbot has been added. There has also been a design change and a relaunch with new colors.</p>
+        <p>Quantum nexus Labs</p>
+        <h2>Additional Pages</h2>
+        <ul>
+            <li><a href="yeeeeeees.html">"Alert & Issue Reporting Page"</a></li>
+            <li><a href="rqyen.html">About Me</a></li>
+            <li><a href="yes.html">"Application Policy and Privacy Guidelines"</a></li>
+            <li><a href="nqth.html">"Language Availability and Future Enhancements"</a></li>
+        </ul>
+    </div>
+
+    <button class="settings-btn" onclick="toggleSidePanel()">☰</button>
+
     <script>
         function toggleOptionsMenu() {
             var optionsMenu = document.getElementById('optionsMenu');
@@ -220,7 +289,11 @@
         function showUpdateMessage() {
             alert("There is a simple update that does not require a version change. A design update has been made, and a page containing the Math Olympiad Contest has been added. A new forum section has also been added.");
         }
+
+        function toggleSidePanel() {
+            var sidePanel = document.getElementById('sidePanel');
+            sidePanel.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
-
