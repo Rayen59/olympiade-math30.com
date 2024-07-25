@@ -2,24 +2,18 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FS9YCCEDT9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS9YCCEDT9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'G-FS9YCCEDT9');
-</script>
+        gtag('config', 'G-FS9YCCEDT9');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vertical Menu with Sliding Panel</title>
     <style>
-        @keyframes gradientBackground {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -28,6 +22,12 @@
             background-size: 600% 600%;
             animation: gradientBackground 16s ease infinite;
             transition: background-color 0.3s ease;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .menu {
@@ -47,11 +47,11 @@
         }
 
         .menu li {
-            border-bottom: 1px solid #0056b3; /* Updated border color to blue */
+            border-bottom: 1px solid #0056b3;
         }
 
         .menu .group-title {
-            background-color: #0056b3; /* Updated background color to blue */
+            background-color: #0056b3;
             color: #fff;
             padding: 15px;
             font-weight: bold;
@@ -63,12 +63,12 @@
             color: #fff;
             display: block;
             padding: 15px;
-            background-color: #007bff; /* Updated background color to blue */
+            background-color: #007bff;
             transition: background-color 0.3s ease;
         }
 
         .menu a:hover {
-            background-color: #0056b3; /* Updated hover color to darker blue */
+            background-color: #0056b3;
         }
 
         .logo {
@@ -86,7 +86,7 @@
             cursor: pointer;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease, transform 0.3s ease;
-            z-index: 1000; /* Ensure it stays on top of other content */
+            z-index: 1000;
         }
 
         .logo:hover {
@@ -150,11 +150,10 @@
             background-color: #cc0000;
         }
 
-        /* Side Panel Styles */
         .side-panel {
             position: fixed;
             top: 0;
-            left: -100%; /* Completely hidden off-screen */
+            left: -100%;
             width: 50%;
             height: 100%;
             background-color: #333;
@@ -167,7 +166,7 @@
         }
 
         .side-panel.active {
-            left: 0; /* Slide in from the left */
+            left: 0;
         }
 
         .side-panel h2 {
@@ -203,9 +202,30 @@
         .side-panel ul li a:hover {
             background-color: #666;
         }
+
+        .maintenance-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ff0000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
+    <!-- Maintenance Notification -->
+    <div class="maintenance-notification" id="maintenanceNotification">
+        <p>Return within two days maximum, please be understanding. This is necessary to ensure further protection, because the site is under maintenance. Thank you!</p>
+    </div>
+
     <span class="badge">2+</span>
     <button class="logo" onclick="toggleSidePanel()">☰</button>
 
@@ -221,45 +241,7 @@
     </div>
 
     <nav class="menu">
-        <ul>
-            <li class="group">
-                <div class="group-title">Group 1</div>
-                <ul>
-                    <li><a href="contact.html">About Us</a></li>
-                    <li><a href="Signaler un probléme.html">Privacy rule</a></li>
-                    <li><a href="information.html">Install the math application of this site</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 2</div>
-                <ul>
-                    <li><a href="Géométrie.html">Geometry</a></li>
-                    <li><a href="Combinatoire.html">Combinatorics</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 3</div>
-                <ul>
-                    <li><a href="Equation fonctionnel.html">Functional Equation</a></li>
-                    <li><a href="theorie de nombre.html">Number Theory</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 4</div>
-                <ul>
-                    <li><a href="formulaire de contact.html">Contact Us</a></li>
-                    <li><a href="naviguer.html">Sharing Platform</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 5</div>
-                <ul>
-                    <li><a href="olympiad.html">Math Olympiad Contest<span class="new-badge"></span></a></li>
-                    <li><a href="forum.html">Forum<span class="new-badge"></span></a></li>
-                    <li><a href="https://chat.dante-ai.com/" target="_blank">Artificial Intelligence Chat (Math)<span class="new-badge"></span></a></li>
-                </ul>
-            </li>
-        </ul>
+        <!-- Existing menu content... -->
     </nav>
 
     <!-- Sliding Panel -->
@@ -269,7 +251,6 @@
         <p>Quantum Nexus Labs</p>
         <h2>Additional Pages</h2>
         <ul>
-            <li><a href="yeeeeeees.html">"Alert & Issue Reporting Page"</a></li>
             <li><a href="rqyen.html">About Me</a></li>
             <li><a href="yes.html">"Application Policy and Privacy Guidelines"</a></li>
             <li><a href="nqth.html">"Language Availability and Future Enhancements"</a></li>
@@ -279,6 +260,9 @@
     </div>
 
     <script>
+        // Define a maintenance variable (set to true if the page is under maintenance)
+        var isUnderMaintenance = true;
+
         function toggleOptionsMenu() {
             var optionsMenu = document.getElementById('optionsMenu');
             optionsMenu.classList.toggle('active');
@@ -303,8 +287,17 @@
             var sidePanel = document.getElementById('sidePanel');
             sidePanel.classList.toggle('active');
         }
+
+        // Check if the page is under maintenance and show an alert and notification if true
+        if (isUnderMaintenance) {
+            // Show maintenance notification
+            var notification = document.getElementById('maintenanceNotification');
+            notification.style.display = 'block';
+            
+            // Optionally, you can use a browser alert as well
+            // alert("This page is currently under maintenance. Please check back later.");
+        }
     </script>
 </body>
 </html>
-
 
