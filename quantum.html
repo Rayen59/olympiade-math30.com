@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People Around a Table</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Dégradé de fond */
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Pour éviter les barres de défilement */
+        }
+        .title {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Effet de lumière */
+        }
+        .container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+        }
+        .table {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 150px;
+            background-color: #8b4513; /* Couleur de la table */
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée pour la table */
+        }
+        .leaf {
+            position: absolute;
+            width: 60px;
+            height: 40px;
+            background-color: white; /* Couleur des feuilles */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre portée pour les feuilles */
+            animation: leafMovement 4s ease-in-out infinite;
+        }
+        @keyframes leafMovement {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(-5deg); }
+        }
+        .leaf1 { top: 20px; left: 15%; transform: rotate(-30deg); }
+        .leaf2 { top: 20px; right: 15%; transform: rotate(30deg); }
+        .leaf3 { bottom: 20px; left: 25%; transform: rotate(15deg); }
+        .leaf4 { bottom: 20px; right: 25%; transform: rotate(-15deg); }
+        .person {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU_ZT3KV9Bk1CQDkrydFADZFn7No5JrJgPRQ&s');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée pour les personnes */
+        }
+        .person:hover {
+            transform: scale(1.1);
+        }
+        .person1 { top: 10px; left: 10px; }
+        .person2 { top: 10px; right: 10px; }
+        .person3 { bottom: 10px; left: 10px; }
+        .person4 { bottom: 10px; right: 10px; }
+
+        .bubble {
+            position: absolute;
+            max-width: 200px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            color: #333;
+            line-height: 1.4;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            animation: fadeInOut 6s ease-in-out infinite;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        .bubble::after {
+            content: '';
+            position: absolute;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #fff transparent transparent transparent;
+        }
+        .bubble1 {
+            top: 100px;
+            left: -210px; /* Ajuster pour placer à gauche de la personne */
+        }
+        .bubble1::after {
+            right: 100%;
+            border-color: #fff transparent transparent transparent;
+        }
+        .bubble2 {
+            top: 100px;
+            right: -210px; /* Ajuster pour placer à gauche de la personne */
+        }
+        .bubble2::after {
+            left: 100%;
+            border-color: #fff transparent transparent transparent;
+        }
+        .bubble3 {
+            bottom: 100px;
+            left: -210px; /* Ajuster pour placer à gauche de la personne */
+        }
+        .bubble3::after {
+            right: 100%;
+            border-color: #fff transparent transparent transparent;
+        }
+        .bubble4 {
+            bottom: 100px;
+            right: -210px; /* Ajuster pour placer à gauche de la personne */
+        }
+        .bubble4::after {
+            left: 100%;
+            border-color: #fff transparent transparent transparent;
+        }
+
+        .computer {
+            position: absolute;
+            width: 60px;
+            height: 40px;
+            background-color: #000;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes screenBlink {
+            0%, 100% { background-color: #000; }
+            50% { background-color: #333; }
+        }
+        .computer-screen {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 2px;
+            top: 5px;
+            left: 5px;
+            animation: screenBlink 2s linear infinite;
+        }
+        .computer1 { top: 100px; left: 10%; }
+        .computer2 { top: 100px; right: 10%; }
+        .computer3 { bottom: 100px; left: 10%; }
+        .computer4 { bottom: 100px; right: 10%; }
+
+        .leader {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/78/78570.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: leaderAnimation 5s ease-in-out infinite;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ombre portée pour le leader */
+        }
+        @keyframes leaderAnimation {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        .leader-text {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Effet de lumière */
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Welcome to Quantum Nexus Labs</div>
+    <div class="container">
+        <div class="table">
+            <!-- Leaves on top of the table -->
+            <div class="leaf leaf1"></div>
+            <div class="leaf leaf2"></div>
+            <div class="leaf leaf3"></div>
+            <div class="leaf leaf4"></div>
+        </div>
+        <div class="leader"></div>
+        <div class="leader-text">Leader Med Rayen Bouazizi</div>
+        <div class="person person1"></div>
+        <div class="person person2"></div>
+        <div class="person person3"></div>
+        <div class="person person4"></div>
+
+        <!-- Dialogues -->
+        <div class="bubble bubble1">
+            <p>Welcome to the discussion! Let's talk about the latest updates from Quantum Nexus Labs.</p>
+        </div>
+        <div class="bubble bubble2">
+            <p>Have you checked out the new features on our platform? They are really useful!</p>
+        </div>
+        <div class="bubble bubble3">
+            <p>Yes, the new tools are great. They will definitely help with our upcoming projects.</p>
+        </div>
+        <div class="bubble bubble4">
+            <p>Absolutely. And the design updates make the interface so much more user-friendly!</p>
+        </div>
+
+        <!-- Computers -->
+        <div class="computer computer1">
+            <div class="computer-screen"></div>
+        </div>
+        <div class="computer computer2">
+            <div class="computer-screen"></div>
+        </div>
+        <div class="computer computer3">
+            <div class="computer-screen"></div>
+        </div>
+        <div class="computer computer4">
+            <div class="computer-screen"></div>
+        </div>
+    </div>
+</body>
+</html>
 
