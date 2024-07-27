@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS9YCCEDT9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-FS9YCCEDT9');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site en Maintenance</title>
+    <title>Maintenance Mode</title>
     <style>
-        @keyframes gradientBackground {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         body {
             margin: 0;
             padding: 0;
@@ -27,123 +12,64 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: url('your-image-url.jpg') no-repeat center center fixed; /* Remplacez 'your-image-url.jpg' par l'URL de votre image */
-            background-size: cover;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff0081, #ff8c00, #ff0081, #ff8c00);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .maintenance-overlay {
-            position: fixed;
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .overlay {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9); /* Réduit l'opacité pour l'effet de superposition */
-            color: #fff;
+            background: rgba(0, 0, 0, 0.5); /* Superposition semi-transparente */
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 1000;
-            font-size: 24px;
+            color: #fff;
             text-align: center;
+            z-index: 1;
+            backdrop-filter: blur(5px); /* Effet de flou pour le fond */
         }
 
-        .maintenance-overlay div {
-            max-width: 80%;
-            margin: auto;
+        .content {
+            z-index: 2;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour le texte */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Ombre portée */
         }
 
-        .maintenance-overlay h1 {
+        h1 {
+            margin: 0;
             font-size: 48px;
-            margin-bottom: 20px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre portée pour le texte */
         }
 
-        .maintenance-overlay p {
+        p {
+            margin: 20px 0 0;
             font-size: 20px;
-        }
-
-        .menu {
-            display: none; /* Cacher le menu */
-        }
-
-        .side-panel {
-            display: none; /* Cacher le panneau latéral */
-        }
-
-        .options-menu {
-            display: none; /* Cacher le menu d'options */
+            color: #ddd;
         }
     </style>
 </head>
 <body>
-    <div class="maintenance-overlay" id="maintenanceOverlay">
-        <div>
-            <h1>Maintenance Mode</h1>
-            <p>Our website is currently undergoing maintenance. We will be back shortly in 1 days maximum. Thank you for your patience!</p>
+    <div class="overlay">
+        <div class="content">
+            <h1>Under Maintenance</h1>
+            <p>We are currently updating our site to provide you with a better experience. Please check back later. Thank you for your patience!</p>
         </div>
     </div>
-
-    <!-- Contenu principal (masqué pendant la maintenance) -->
-    <nav class="menu">
-        <ul>
-            <li class="group">
-                <div class="group-title">Group 1</div>
-                <ul>
-                    <li><a href="contact.html">About Us</a></li>
-                    <li><a href="Signaler un probléme.html">Privacy rule</a></li>
-                    <li><a href="information.html">Install the math application of this site</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 2</div>
-                <ul>
-                    <li><a href="Géométrie.html">Geometry</a></li>
-                    <li><a href="Combinatoire.html">Combinatorics</a></li>
-                    <li><a href="Algebre.html">Algebra</a></li>
-                    <li><a href="Nombres.html">Number Theory</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="side-panel" id="sidePanel">
-        <h2>Side Panel</h2>
-        <p>Content for the side panel goes here. You can include links, information, or any other content.</p>
-        <ul>
-            <li><a href="#link1">Link 1</a></li>
-            <li><a href="#link2">Link 2</a></li>
-            <li><a href="#link3">Link 3</a></li>
-        </ul>
-    </div>
-
-    <div class="options-menu" id="optionsMenu">
-        <div class="color-option" style="background-color: #00f;" onclick="changeBackgroundColor('#00f')">Blue</div>
-        <div class="color-option" style="background-color: #0f0;" onclick="changeBackgroundColor('#0f0')">Green</div>
-        <div class="color-option" style="background-color: #f00;" onclick="changeBackgroundColor('#f00')">Red</div>
-        <div class="color-option" style="background-color: #fff; color: #000;" onclick="changeBackgroundColor('#fff')">White</div>
-        <div class="bell-option" onclick="showUpdateMessage()">🔔 Check for Updates</div>
-        <button class="send-alert-btn" onclick="sendAlert()">Send Alert</button>
-        <p style="font-size: 12px; color: #666; margin-top: 10px;">new forum added 🆕</p>
-        <p style="font-size: 12px; color: #666; margin-top: 10px;">Version 2.1</p>
-    </div>
-
-    <script>
-        function changeBackgroundColor(color) {
-            document.body.style.backgroundColor = color;
-        }
-
-        function showUpdateMessage() {
-            alert('Check for Updates functionality is not yet implemented.');
-        }
-
-        function sendAlert() {
-            alert('Alert sent!');
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var maintenanceOverlay = document.getElementById('maintenanceOverlay');
-            maintenanceOverlay.style.display = 'flex'; // Afficher la superposition
-        });
-    </script>
 </body>
 </html>
-
