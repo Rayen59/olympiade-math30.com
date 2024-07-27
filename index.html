@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FS9YCCEDT9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS9YCCEDT9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-FS9YCCEDT9');
-</script>
+      gtag('config', 'G-FS9YCCEDT9');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Menu with Sliding Panel</title>
+    <title>Site en Maintenance</title>
     <style>
         @keyframes gradientBackground {
             0% { background-position: 0% 50%; }
@@ -21,205 +21,68 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff00ff, #00ffff, #ffff00);
-            background-size: 600% 600%;
-            animation: gradientBackground 16s ease infinite;
-            transition: background-color 0.3s ease;
-        }
-
-        .menu {
-            width: 100%;
-            max-width: 400px;
-            margin: 20px auto;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            color: #fff;
-        }
-
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu li {
-            border-bottom: 1px solid #0056b3; /* Updated border color to blue */
-        }
-
-        .menu .group-title {
-            background-color: #0056b3; /* Updated background color to blue */
-            color: #fff;
-            padding: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: #fff;
-            display: block;
-            padding: 15px;
-            background-color: #007bff; /* Updated background color to blue */
-            transition: background-color 0.3s ease;
-        }
-
-        .menu a:hover {
-            background-color: #0056b3; /* Updated hover color to darker blue */
-        }
-
-        .logo {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: #444;
-            border-radius: 50%;
-            color: #fff;
-            font-size: 24px;
-            text-align: center;
-            line-height: 50px;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            z-index: 1000; /* Ensure it stays on top of other content */
-        }
-
-        .logo:hover {
-            background-color: #666;
-            transform: scale(1.1);
-        }
-
-        .badge {
-            position: fixed;
-            top: 5px;
-            right: 15px;
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            color: white;
-            border-radius: 50%;
-            font-size: 14px;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: url('your-image-url.jpg') no-repeat center center fixed; /* Remplacez 'your-image-url.jpg' par l'URL de votre image */
+            background-size: cover;
+        }
+
+        .maintenance-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Réduit l'opacité pour l'effet de superposition */
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .maintenance-overlay div {
+            max-width: 80%;
+            margin: auto;
+        }
+
+        .maintenance-overlay h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .maintenance-overlay p {
+            font-size: 20px;
+        }
+
+        .menu {
+            display: none; /* Cacher le menu */
+        }
+
+        .side-panel {
+            display: none; /* Cacher le panneau latéral */
         }
 
         .options-menu {
-            display: none;
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            width: 200px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .options-menu.active {
-            display: block;
-        }
-
-        .color-option, .bell-option {
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .color-option:hover, .bell-option:hover {
-            background-color: #f0f0f0;
-        }
-
-        .send-alert-btn {
-            background-color: #ff0000;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .send-alert-btn:hover {
-            background-color: #cc0000;
-        }
-
-        /* Side Panel Styles */
-        .side-panel {
-            position: fixed;
-            top: 0;
-            left: -100%; /* Completely hidden off-screen */
-            width: 50%;
-            height: 100%;
-            background-color: #333;
-            color: #fff;
-            transition: left 0.3s ease;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            z-index: 1000;
-            overflow-y: auto;
-        }
-
-        .side-panel.active {
-            left: 0; /* Slide in from the left */
-        }
-
-        .side-panel h2 {
-            margin-top: 0;
-            font-size: 24px;
-        }
-
-        .side-panel p {
-            font-size: 16px;
-            line-height: 1.5;
-            margin: 20px 0;
-        }
-
-        .side-panel ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .side-panel ul li {
-            margin: 10px 0;
-        }
-
-        .side-panel ul li a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-            background-color: #444;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .side-panel ul li a:hover {
-            background-color: #666;
+            display: none; /* Cacher le menu d'options */
         }
     </style>
 </head>
 <body>
-    <span class="badge">2+</span>
-    <button class="logo" onclick="toggleSidePanel()">☰</button>
-
-    <div class="options-menu" id="optionsMenu">
-        <div class="color-option" style="background-color: #00f;" onclick="changeBackgroundColor('#00f')">Blue</div>
-        <div class="color-option" style="background-color: #0f0;" onclick="changeBackgroundColor('#0f0')">Green</div>
-        <div class="color-option" style="background-color: #f00;" onclick="changeBackgroundColor('#f00')">Red</div>
-        <div class="color-option" style="background-color: #fff; color: #000;" onclick="changeBackgroundColor('#fff')">White</div>
-        <div class="bell-option" onclick="showUpdateMessage()">🔔 Check for Updates</div>
-        <button class="send-alert-btn" onclick="sendAlert()">Send Alert</button>
-        <p style="font-size: 12px; color: #666; margin-top: 10px;">new forum added 🆕</p>
-        <p style="font-size: 12px; color: #666; margin-top: 10px;">Version 2.1</p>
+    <div class="maintenance-overlay" id="maintenanceOverlay">
+        <div>
+            <h1>Maintenance Mode</h1>
+            <p>Our website is currently undergoing maintenance. We will be back shortly in 1 days maximum. Thank you for your patience!</p>
+        </div>
     </div>
 
+    <!-- Contenu principal (masqué pendant la maintenance) -->
     <nav class="menu">
         <ul>
             <li class="group">
@@ -235,75 +98,52 @@
                 <ul>
                     <li><a href="Géométrie.html">Geometry</a></li>
                     <li><a href="Combinatoire.html">Combinatorics</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 3</div>
-                <ul>
-                    <li><a href="Equation fonctionnel.html">Functional Equation</a></li>
-                    <li><a href="theorie de nombre.html">Number Theory</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 4</div>
-                <ul>
-                    <li><a href="formulaire de contact.html">Contact Us</a></li>
-                    <li><a href="naviguer.html">Sharing Platform</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 5</div>
-                <ul>
-                    <li><a href="olympiad.html">Math Olympiad Contest<span class="new-badge"></span></a></li>
-                    <li><a href="forum.html">Forum<span class="new-badge"></span></a></li>
-                    <li><a href="https://chat.dante-ai.com/" target="_blank">Artificial Intelligence Chat (Math)<span class="new-badge"></span></a></li>
+                    <li><a href="Algebre.html">Algebra</a></li>
+                    <li><a href="Nombres.html">Number Theory</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 
-    <!-- Sliding Panel -->
     <div class="side-panel" id="sidePanel">
-        <h2>Updates</h2>
-        <p>The forum has been successfully created, and a chatbot has been added. There has also been a design change and a relaunch with new colors.</p>
-        <p>Quantum Nexus Labs</p>
-        <h2>Additional Pages</h2>
+        <h2>Side Panel</h2>
+        <p>Content for the side panel goes here. You can include links, information, or any other content.</p>
         <ul>
-            <li><a href="yeeeeeees.html">"Alert & Issue Reporting Page"</a></li>
-            <li><a href="rqyen.html">About Me</a></li>
-            <li><a href="yes.html">"Application Policy and Privacy Guidelines"</a></li>
-            <li><a href="nqth.html">"Language Availability and Future Enhancements"</a></li>
-            <li><a href="critique.html">"Problem Stats & Reviews"</a></li>
-            <li><a href="admin.html">"Admin profile"</a></li>
-              <li><a href="quantum.html">""Inside Quantum Nexus Labs: Leadership and Innovation""</a></li>
+            <li><a href="#link1">Link 1</a></li>
+            <li><a href="#link2">Link 2</a></li>
+            <li><a href="#link3">Link 3</a></li>
         </ul>
     </div>
 
-    <script>
-        function toggleOptionsMenu() {
-            var optionsMenu = document.getElementById('optionsMenu');
-            optionsMenu.classList.toggle('active');
-        }
+    <div class="options-menu" id="optionsMenu">
+        <div class="color-option" style="background-color: #00f;" onclick="changeBackgroundColor('#00f')">Blue</div>
+        <div class="color-option" style="background-color: #0f0;" onclick="changeBackgroundColor('#0f0')">Green</div>
+        <div class="color-option" style="background-color: #f00;" onclick="changeBackgroundColor('#f00')">Red</div>
+        <div class="color-option" style="background-color: #fff; color: #000;" onclick="changeBackgroundColor('#fff')">White</div>
+        <div class="bell-option" onclick="showUpdateMessage()">🔔 Check for Updates</div>
+        <button class="send-alert-btn" onclick="sendAlert()">Send Alert</button>
+        <p style="font-size: 12px; color: #666; margin-top: 10px;">new forum added 🆕</p>
+        <p style="font-size: 12px; color: #666; margin-top: 10px;">Version 2.1</p>
+    </div>
 
+    <script>
         function changeBackgroundColor(color) {
             document.body.style.backgroundColor = color;
         }
 
-        function sendAlert() {
-            var emailAddress = 'matholympiad40@gmail.com';
-            var subject = encodeURIComponent('Send alert for upcoming competitions');
-            var mailtoLink = 'mailto:' + emailAddress + '?subject=' + subject;
-            window.location.href = mailtoLink;
-        }
-
         function showUpdateMessage() {
-            alert("There is a simple update that does not require a version change. A design update has been made, and a page containing the Math Olympiad Contest has been added. A new forum section has also been added.");
+            alert('Check for Updates functionality is not yet implemented.');
         }
 
-        function toggleSidePanel() {
-            var sidePanel = document.getElementById('sidePanel');
-            sidePanel.classList.toggle('active');
+        function sendAlert() {
+            alert('Alert sent!');
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var maintenanceOverlay = document.getElementById('maintenanceOverlay');
+            maintenanceOverlay.style.display = 'flex'; // Afficher la superposition
+        });
     </script>
 </body>
 </html>
+
