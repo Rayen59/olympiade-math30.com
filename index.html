@@ -225,6 +225,49 @@
             margin-left: 8px;
             text-transform: uppercase;
         }
+        /* Styles pour le message de maintenance */
+.maintenance-message {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 2000;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.maintenance-message h3 {
+    margin-top: 0;
+    color: #4a90e2;
+}
+
+.maintenance-message p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.maintenance-message button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.maintenance-message button:hover {
+    background-color: #367cb7;
+}
+
     </style>
 </head>
 <body>
@@ -241,7 +284,12 @@
         <p style="font-size: 12px; color: #666; margin: 10px;">new forum added 🆕</p>
         <p style="font-size: 12px; color: #666; margin: 10px;">Version 2.1</p>
     </div>
-
+    <div class="maintenance-message" id="maintenanceMessage">
+        <h3>Apology for Maintenance</h3>
+        <p>"We apologize for any inconvenience. Our site is currently undergoing maintenance to improve your experience. Thank you for your patience!"</p>
+        <button onclick="closeMaintenanceMessage()">close</button>
+    </div>
+    
     <nav class="menu">
         <ul>
             <li class="group">
@@ -300,6 +348,25 @@
         </ul>
     </div>
     <script>
+         // Fonction pour afficher le message de maintenance
+    function showMaintenanceMessage() {
+        var messageDisplayed = localStorage.getItem('maintenanceMessageDisplayed');
+
+        if (!messageDisplayed) {
+            document.getElementById('maintenanceMessage').style.display = 'block';
+            localStorage.setItem('maintenanceMessageDisplayed', 'true');
+        }
+    }
+
+    // Fonction pour fermer le message de maintenance
+    function closeMaintenanceMessage() {
+        document.getElementById('maintenanceMessage').style.display = 'none';
+    }
+
+    // Afficher le message de maintenance au chargement de la page
+    window.onload = function() {
+        showMaintenanceMessage();
+    };
         function toggleOptionsMenu() {
             var optionsMenu = document.getElementById('optionsMenu');
             optionsMenu.classList.toggle('active');
