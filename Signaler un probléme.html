@@ -2,120 +2,152 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FS9YCCEDT9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS9YCCEDT9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'G-FS9YCCEDT9');
-</script>
+        gtag('config', 'G-FS9YCCEDT9');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Olympiad Problems</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        .problem {
+            background-color: #e8f0fe;
+            border: 1px solid #d0d9e8;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .problem:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .problem-title {
+            font-size: 24px;
+            color: #00509e;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .problem-content {
+            background-color: #f0f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            color: #555;
+        }
+
+        .problem-stats {
+            background-color: #d0d9e8;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .problem-stats p {
+            margin: 5px 0;
+        }
+
+        nav {
+            background-color: #00509e;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffb703;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Georgia', serif;
+            color: #00509e;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #e8f0fe;
+            color: #555;
+            border-top: 1px solid #d0d9e8;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .problem {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+    </style>
 </head>
-<style>
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #2e2e2e;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.problem {
-    background-color: #3e3e3e;
-    border: 1px solid #4a4a4a;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 5px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.problem:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-.problem-title {
-    font-size: 22px;
-    color: #ff8c00;
-    margin-bottom: 10px;
-}
-
-.problem-content {
-    background-color: #4a4a4a;
-    padding: 15px;
-    border-radius: 5px;
-    color: #d4d4d4;
-}
-
-.problem-stats {
-    background-color: #5a5a5a;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    color: #b4b4b4;
-}
-
-.problem-stats p {
-    margin: 5px 0;
-}
-
-nav {
-    background-color: #333;
-    padding: 15px;
-    text-align: center;
-    border-bottom: 2px solid #4aa3df;
-}
-
-nav a {
-    color: #4aa3df;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #ff8c00;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Georgia', serif;
-    color: #ff8c00;
-    margin-top: 0;
-}
-
-p {
-    margin-bottom: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #2e2e2e;
-    color: #b4b4b4;
-    border-top: 1px solid #4a4a4a;
-}
-
-footer p {
-    margin: 5px 0;
-}
-</style>
 <body>
     <nav>
         <a href="#privacy-policy">Privacy Policy</a>
@@ -170,12 +202,11 @@ footer p {
             5) Duration of Block: Indicate that the duration of the block will be determined by the site administrator, based on the nature of the fraud committed. This may vary for first-time offenses, but harsher measures may be taken for repeat offenses.
             6) User Responsibility: Emphasize the importance for each user to uphold academic integrity and site rules. Encourage them to report any suspicious activity or rule violations.
             7) Education and Awareness: Provide educational resources on academic ethics and the importance of integrity in mathematical competitions. This may include tips on recognizing and avoiding fraud.
-            😎 To succeed in the Olympiads, it is crucial to understand the requirements and prepare effectively. First and foremost, manage your time wisely: with only 4 and a half hours to solve 6 problems, every minute counts. Prioritize problems based on their complexity and focus on those you can solve most quickly. Be sure to read the instructions carefully and follow the guidelines for each problem to avoid costly errors. Additionally, accuracy is paramount: submit your solutions only when you are confident in their correctness, as submissions after the deadline will be rejected. Also, avoid any form of plagiarism: organizers and graders are vigilant and have means to detect similarities between submissions. Finally, stay calm and focused throughout the competition, even when faced with seemingly insurmountable challenges. Remember that each problem is an opportunity for learning and growth, and your perseverance can make the difference between success and defeat.
+            😎 To succeed in the Olympiads, it is crucial to understand the requirements and prepare effectively. First and foremost, manage your time wisely: with only 4 and a half hours to solve 6 problems, every minute counts. Prioritize problems based on their complexity and focus on those you can solve most quickly. Be sure to read the instructions carefully and follow the guidelines for each problem to avoid costly errors. Additionally, accuracy is paramount: submit your solutions only when you are confident in their correctness, as submissions after the deadline will be rejected. Also, avoid any form of plagiarism: organizers and graders are vigilant and the consequences of being caught can be severe, including disqualification. Finally, remember that participation in the Olympiads is an opportunity to challenge yourself and learn; so stay calm, stay focused, and do your best!
         </p>
     </div>
     <footer>
-        <p>Last updated: July 18, 2024</p>
-        <p>Contact: privacymatholympiad40@gmail.com</p>
+        <p>&copy; 2024 Math Olympiad. All rights reserved.Last updaate 30 July.</p>
     </footer>
 </body>
 </html>
