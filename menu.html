@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Nexus Labs Journal</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 900px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #00539C;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .header .date {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .navbar {
+            background-color: #e3e3e3;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #00539C;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .main-content {
+            columns: 2 300px; /* Two columns with a minimum width of 300px */
+            column-gap: 40px; /* Gap between columns */
+            padding: 10px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #00539C;
+            column-span: all; /* Span header across columns */
+        }
+
+        article {
+            margin-bottom: 20px;
+            break-inside: avoid; /* Prevent article from breaking across columns */
+            page-break-inside: avoid; /* Prevent page break inside article */
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        article h3 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        article p {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .author {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .date-published {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #00539C;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Quantum Nexus Labs Journal</h1>
+            <p class="date">August 1, 2024</p>
+        </header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#news">News</a></li>
+                <li><a href="#developments">Developments</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#research">Research</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <section id="news" class="news-section">
+                <h2>Latest News</h2>
+                <article class="news-article">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/L%27%C5%93uvre_%281915-09-24%29.jpg/640px-L%27%C5%93uvre_%281915-09-24%29.jpg" alt="Quantum Nexus Labs Expansion" class="image">
+                    <h3>Quantum Nexus Labs Expands Global Reach</h3>
+                    <p class="date-published">August 1, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        Quantum Nexus Labs is thrilled to announce its expansion into international markets. With new offices in London and Tokyo, the company aims to bring innovative solutions to a broader audience. Our commitment to advancing technology in AI and machine learning is stronger than ever.
+                    </p>
+                </article>
+                <article class="news-article">
+                    <h3>Breakthrough in Quantum Computing</h3>
+                    <p class="date-published">July 30, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        Our research team has achieved a significant milestone in quantum computing, pushing the boundaries of what is possible. This breakthrough promises to revolutionize industries by providing unprecedented computational power and efficiency.
+                    </p>
+                </article>
+                <article class="news-article">
+                    <h3>New Initiative in Sustainable Technology</h3>
+                    <p class="date-published">July 25, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        Quantum Nexus Labs is launching a new initiative aimed at promoting sustainable technology. This project will focus on developing eco-friendly solutions to reduce the environmental impact of technological advancements.
+                    </p>
+                </article>
+            </section>
+            <section id="developments" class="developments-section">
+                <h2>Recent Developments</h2>
+                <article class="development-article">
+                    <h3>Launch of New AI Platform</h3>
+                    <p class="date-published">August 1, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        We are excited to introduce our latest AI platform, designed to enhance productivity and streamline operations across various sectors. The platform leverages state-of-the-art machine learning algorithms to deliver real-time insights and analytics.
+                    </p>
+                </article>
+                <article class="development-article">
+                    <h3>Partnership with Leading Tech Companies</h3>
+                    <p class="date-published">July 28, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        Quantum Nexus Labs has partnered with several leading technology firms to collaborate on cutting-edge projects. This strategic alliance will drive innovation and foster a culture of creativity and excellence.
+                    </p>
+                </article>
+                <article class="development-article">
+                    <h3>Improvement in Data Security Measures</h3>
+                    <p class="date-published">July 20, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        Our company has made significant improvements in data security measures, ensuring that our clients' information remains protected against emerging threats. This enhancement is part of our ongoing commitment to safeguarding data integrity.
+                    </p>
+                </article>
+            </section>
+            <section id="technology" class="technology-section">
+                <h2>Technology Updates</h2>
+                <article class="technology-article">
+                    <h3>Advancements in Machine Learning</h3>
+                    <p class="date-published">August 1, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        Our latest machine learning models have achieved unprecedented accuracy and speed, setting new industry standards. These advancements are paving the way for more intelligent and adaptable systems.
+                    </p>
+                </article>
+                <article class="technology-article">
+                    <h3>Exploring the Future of AI</h3>
+                    <p class="date-published">July 30, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        As we look to the future, Quantum Nexus Labs is dedicated to exploring the vast potential of AI. Our research focuses on developing ethical and responsible AI technologies that enhance human capabilities.
+                    </p>
+                </article>
+                <article class="technology-article">
+                    <h3>New Innovations in Cloud Computing</h3>
+                    <p class="date-published">July 25, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        Our recent innovations in cloud computing aim to provide more efficient and scalable solutions for businesses. These advancements will help organizations manage their resources more effectively and securely.
+                    </p>
+                </article>
+            </section>
+            <section id="research" class="research-section">
+                <h2>Research Highlights</h2>
+                <article class="research-article">
+                    <h3>Innovative Research in Quantum Physics</h3>
+                    <p class="date-published">August 1, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        Our research team is delving into the mysteries of quantum physics, uncovering new principles that could transform our understanding of the universe. This groundbreaking work has the potential to lead to revolutionary discoveries.
+                    </p>
+                </article>
+                <article class="research-article">
+                    <h3>Exploring New Frontiers in Science</h3>
+                    <p class="date-published">July 30, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        At Quantum Nexus Labs, we are committed to pushing the boundaries of scientific exploration. Our researchers are working tirelessly to explore new frontiers and unlock the secrets of the natural world.
+                    </p>
+                </article>
+                <article class="research-article">
+                    <h3>New Discoveries in Astrophysics</h3>
+                    <p class="date-published">July 25, 2024</p>
+                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p>
+                        Our astrophysics research has led to new discoveries about the behavior of black holes and dark matter. These findings contribute to our understanding of the cosmos and its complex phenomena.
+                    </p>
+                </article>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>© 2024 Quantum Nexus Labs. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
