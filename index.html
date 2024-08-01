@@ -1,397 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS9YCCEDT9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-FS9YCCEDT9');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Menu with Sliding Panel</title>
+    <title>Simple CAPTCHA Example</title>
     <style>
-        @keyframes gradientBackground {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(45deg, #4a90e2, #50e3c2, #f5a623, #bd10e0, #b8e986, #f8e71c);
-            background-size: 400% 400%;
-            animation: gradientBackground 20s ease infinite;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
             color: #333;
-            transition: background-color 0.3s ease;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
-        .menu {
-            width: 100%;
+        .captcha-container {
             max-width: 400px;
-            margin: 20px auto;
-            background-color: #fff;
+            background: #fff;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu li {
-            border-bottom: 1px solid #eee;
-        }
-
-        .menu .group-title {
-            background-color: #4a90e2;
-            color: #fff;
-            padding: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: #333;
-            display: block;
-            padding: 15px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .menu a:hover {
-            background-color: #f0f0f0;
-            color: #4a90e2;
-        }
-
-        .logo {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: #4a90e2;
-            border-radius: 50%;
-            color: #fff;
-            font-size: 24px;
             text-align: center;
-            line-height: 50px;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            z-index: 1000;
         }
 
-        .logo:hover {
-            background-color: #367cb7;
-            transform: scale(1.1);
-        }
-
-        .badge {
-            position: fixed;
-            top: 5px;
-            right: 15px;
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            color: white;
-            border-radius: 50%;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .options-menu {
-            display: none;
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            width: 250px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            overflow: hidden;
-        }
-
-        .options-menu.active {
-            display: block;
-        }
-
-        .color-option, .bell-option {
-            padding: 15px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .color-option:hover, .bell-option:hover {
-            background-color: #f0f0f0;
-        }
-
-        .send-alert-btn {
-            background-color: #4a90e2;
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin: 15px;
-            transition: background-color 0.3s ease;
-            width: calc(100% - 30px);
-        }
-
-        .send-alert-btn:hover {
-            background-color: #367cb7;
-        }
-
-        /* Side Panel Styles */
-        .side-panel {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 60%;
-            max-width: 300px;
-            height: 100%;
-            background-color: #333;
-            color: #fff;
-            transition: left 0.3s ease;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            z-index: 1000;
-            overflow-y: auto;
-        }
-
-        .side-panel.active {
-            left: 0;
-        }
-
-        .side-panel h2 {
-            margin-top: 0;
+        .captcha {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #e0e7ff;
+            color: #333;
+            display: inline-block;
             font-size: 24px;
-            border-bottom: 2px solid #4a90e2;
-            padding-bottom: 10px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+            width: fit-content;
+        }
+
+        #result {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 250px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            color: #333;
             margin-bottom: 20px;
         }
 
-        .side-panel p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 20px 0;
+        p {
+            color: #666;
+            margin-bottom: 20px;
         }
-
-        .side-panel ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .side-panel ul li {
-            margin: 10px 0;
-        }
-
-        .side-panel ul li a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-            background-color: #444;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .side-panel ul li a:hover {
-            background-color: #666;
-        }
-
-        .new-badge {
-            background-color: #f8e71c;
-            color: #333;
-            font-size: 10px;
-            font-weight: bold;
-            padding: 3px 6px;
-            border-radius: 3px;
-            margin-left: 8px;
-            text-transform: uppercase;
-        }
-        /* Styles pour le message de maintenance */
-.maintenance-message {
-    display: none;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    color: #333;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    z-index: 2000;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-}
-
-.maintenance-message h3 {
-    margin-top: 0;
-    color: #4a90e2;
-}
-
-.maintenance-message p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.maintenance-message button {
-    background-color: #4a90e2;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.maintenance-message button:hover {
-    background-color: #367cb7;
-}
-
     </style>
 </head>
 <body>
-    <span class="badge">2+</span>
-    <button class="logo" onclick="toggleSidePanel()">☰</button>
+    <div class="captcha-container" id="captcha-container">
+        <h1>Human Verification CAPTCHA</h1>
+        <p>Please enter the CAPTCHA below:</p>
+        
+        <!-- CAPTCHA -->
+        <div id="captcha" class="captcha"></div>
 
-    <div class="options-menu" id="optionsMenu">
-        <div class="color-option" style="background-color: #4a90e2;" onclick="changeBackgroundColor('#4a90e2')">Blue</div>
-        <div class="color-option" style="background-color: #50e3c2;" onclick="changeBackgroundColor('#50e3c2')">Green</div>
-        <div class="color-option" style="background-color: #f5a623;" onclick="changeBackgroundColor('#f5a623')">Orange</div>
-        <div class="color-option" style="background-color: #fff; color: #000;" onclick="changeBackgroundColor('#fff')">White</div>
-        <div class="bell-option" onclick="showUpdateMessage()">🔔 Check for Updates</div>
-        <button class="send-alert-btn" onclick="sendAlert()">Send Alert</button>
-        <p style="font-size: 12px; color: #666; margin: 10px;">new forum added 🆕</p>
-        <p style="font-size: 12px; color: #666; margin: 10px;">Version 2.1</p>
+        <!-- User input form -->
+        <form id="captcha-form">
+            <input type="text" id="captcha-input" placeholder="Enter CAPTCHA" required>
+            <input type="submit" value="Verify">
+        </form>
+        
+        <!-- Verification result -->
+        <div id="result"></div>
     </div>
-    <div class="maintenance-message" id="maintenanceMessage">
-        <h3>Apology for Maintenance</h3>
-        <p>"We apologize for any inconvenience. Our site is currently undergoing maintenance to improve your experience. Thank you for your patience!"</p>
-        <button onclick="closeMaintenanceMessage()">close</button>
-    </div>
-    
-    <nav class="menu">
-        <ul>
-            <li class="group">
-                <div class="group-title">Group 1</div>
-                <ul>
-                    <li><a href="contact.html">About Us</a></li>
-                    <li><a href="Signaler un probléme.html">Privacy rule</a></li>
-                    <li><a href="information.html">Install the math application of this site</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 2</div>
-                <ul>
-                    <li><a href="Géométrie.html">Geometry</a></li>
-                    <li><a href="Combinatoire.html">Combinatorics</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 3</div>
-                <ul>
-                    <li><a href="Equation fonctionnel.html">Functional Equation</a></li>
-                    <li><a href="theorie de nombre.html">Number Theory</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 4</div>
-                <ul>
-                    <li><a href="formulaire de contact.html">Contact Us</a></li>
-                    <li><a href="naviguer.html">Sharing Platform</a></li>
-                </ul>
-            </li>
-            <li class="group">
-                <div class="group-title">Group 5</div>
-                <ul>
-                    <li><a href="olympiad.html">Math Olympiad Contest<span class="new-badge"></span></a></li>
-                    <li><a href="forum.html">Forum<span class="new-badge"></span></a></li>
-                    <li><a href="https://chat.dante-ai.com/" target="_blank">Artificial Intelligence Chat (Math)<span class="new-badge"></span></a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <!-- Sliding Panel -->
-    <div class="side-panel" id="sidePanel">
-        <h2>Updates</h2>
-        <p>The forum has been successfully created, and a chatbot has been added. There has also been a design change and a relaunch with new colors.</p>
-        <p>Quantum Nexus Labs</p>
-        <h2>Additional Pages</h2>
-        <ul>
-            <li><a href="yeeeeeees.html">"Alert & Issue Reporting Page"</a></li>
-            <li><a href="rqyen.html">About Me</a></li>
-            <li><a href="yes.html">"Application Policy and Privacy Guidelines"</a></li>
-            <li><a href="nqth.html">"Language Availability and Future Enhancements"</a></li>
-            <li><a href="critique.html">"Problem Stats & Reviews"</a></li>
-            <li><a href="admin.html">"Admin profile"</a></li>
-              <li><a href="quantum.html">""Inside Quantum Nexus Labs: Leadership and Innovation""</a></li>
-            <li><a href="menu.html">"News"</a></li>
-        </ul>
-    </div>
+
     <script>
-         // Fonction pour afficher le message de maintenance
-    function showMaintenanceMessage() {
-        var messageDisplayed = localStorage.getItem('maintenanceMessageDisplayed');
-
-        if (!messageDisplayed) {
-            document.getElementById('maintenanceMessage').style.display = 'block';
-            localStorage.setItem('maintenanceMessageDisplayed', 'true');
-        }
-    }
-
-    // Fonction pour fermer le message de maintenance
-    function closeMaintenanceMessage() {
-        document.getElementById('maintenanceMessage').style.display = 'none';
-    }
-
-    // Afficher le message de maintenance au chargement de la page
-    window.onload = function() {
-        showMaintenanceMessage();
-    };
-        function toggleOptionsMenu() {
-            var optionsMenu = document.getElementById('optionsMenu');
-            optionsMenu.classList.toggle('active');
+        // Function to generate CAPTCHA
+        function generateCaptcha() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let captcha = '';
+            for (let i = 0; i < 6; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                captcha += characters[randomIndex];
+            }
+            return captcha;
         }
 
-        function changeBackgroundColor(color) {
-            document.body.style.backgroundColor = color;
+        // Display the CAPTCHA
+        function displayCaptcha() {
+            const captchaText = generateCaptcha();
+            document.getElementById('captcha').innerText = captchaText;
+            return captchaText;
         }
 
-        function sendAlert() {
-            var emailAddress = 'matholympiad40@gmail.com';
-            var subject = encodeURIComponent('Send alert for upcoming competitions');
-            var mailtoLink = 'mailto:' + emailAddress + '?subject=' + subject;
-            window.location.href = mailtoLink;
+        // Verify the CAPTCHA input
+        function verifyCaptcha(input, captcha) {
+            return input === captcha;
         }
 
-        function showUpdateMessage() {
-            alert("There is a simple update that does not require a version change. A design update has been made, and a page containing the Math Olympiad Contest has been added. A new forum section has also been added.");
+        // Initialize the CAPTCHA
+        let currentCaptcha = displayCaptcha();
+
+        // Check if the user has already passed the CAPTCHA
+        if (localStorage.getItem('captchaPassed') === 'true') {
+            window.location.href = 'https://rayen59.github.io/olympiade-math30.com/';
         }
 
-        function toggleSidePanel() {
-            var sidePanel = document.getElementById('sidePanel');
-            sidePanel.classList.toggle('active');
-        }
+        // Handle form submission
+        document.getElementById('captcha-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userInput = document.getElementById('captcha-input').value;
+
+            if (verifyCaptcha(userInput, currentCaptcha)) {
+                localStorage.setItem('captchaPassed', 'true'); // Remember the successful CAPTCHA attempt
+                window.location.href = 'https://rayen59.github.io/olympiade-math30.com/';
+            } else {
+                document.getElementById('result').innerText = 'Incorrect CAPTCHA. Please try again.';
+                document.getElementById('result').style.color = 'red';
+                currentCaptcha = displayCaptcha(); // Generate a new CAPTCHA
+            }
+
+            document.getElementById('captcha-input').value = ''; // Reset the input field
+        });
     </script>
 </body>
 </html>
+
