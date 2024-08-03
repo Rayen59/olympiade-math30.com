@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Nexus Labs Journal</title>
+    <title>Quantum Nexus Labs Journal & Announcement</title>
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -15,6 +16,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            line-height: 1.6;
         }
 
         .container {
@@ -72,8 +74,10 @@
         }
 
         .main-content {
-            columns: 2 300px; /* Two columns with a minimum width of 300px */
-            column-gap: 40px; /* Gap between columns */
+            columns: 2 300px;
+            /* Two columns with a minimum width of 300px */
+            column-gap: 40px;
+            /* Gap between columns */
             padding: 10px;
         }
 
@@ -85,13 +89,16 @@
             font-size: 24px;
             margin-bottom: 10px;
             color: #00539C;
-            column-span: all; /* Span header across columns */
+            column-span: all;
+            /* Span header across columns */
         }
 
         article {
             margin-bottom: 20px;
-            break-inside: avoid; /* Prevent article from breaking across columns */
-            page-break-inside: avoid; /* Prevent page break inside article */
+            break-inside: avoid;
+            /* Prevent article from breaking across columns */
+            page-break-inside: avoid;
+            /* Prevent page break inside article */
             padding-bottom: 10px;
             border-bottom: 1px dashed #ccc;
         }
@@ -137,16 +144,57 @@
             margin: 0;
             font-size: 16px;
         }
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-}
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
 
-.footer-container {
+        .announcement-header {
+            font-size: 26px;
+            font-weight: bold;
+            color: #3f51b5;
+            /* Blue color for header */
+            margin-bottom: 10px;
+        }
+
+        .announcement-subtitle {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .announcement-content {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #e91e63;
+            /* Highlighted text in pink */
+        }
+
+        .extra-info {
+            font-size: 14px;
+            color: #555;
+            background-color: #fff3e0;
+            padding: 10px;
+            border-left: 4px solid #ff9800;
+            border-radius: 3px;
+        }
+
+        .extra-info p {
+            margin: 5px 0;
+        }
+        .footer-container {
     background-color: #204759;
     color: #ffffff;
     padding: 40px 0;
@@ -236,6 +284,7 @@ body {
 }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
@@ -258,16 +307,42 @@ body {
                     <p class="date-published">August 3, 2024</p>
                     <p class="author">By Med Rayen Bouazizi</p>
                     <p>
-                        We apologize for the recent maintenance and server issues. The servers have now been corrected and are fully operational. We are excited to announce upcoming changes to our site, including the launch of an Olympiad with medals to be awarded in version 3.1. Our primary focus remains on advancing research and technology.
+                        We apologize for the recent maintenance and server issues. The servers have now been corrected
+                        and are fully operational. We are excited to announce upcoming changes to our site, including the
+                        launch of an Olympiad with medals to be awarded in version 3.1. Our primary focus remains on
+                        advancing research and technology.
                     </p>
                 </article>
                 <article class="news-article">
                     <h3>Future Developments</h3>
                     <p class="date-published">August 3, 2024</p>
                     <p>
-                        We are committed to enhancing our platform and providing innovative solutions. Stay tuned for more updates and improvements in the near future.
+                        We are committed to enhancing our platform and providing innovative solutions. Stay tuned for
+                        more updates and improvements in the near future.
                     </p>
                 </article>
+            </section>
+            <section id="announcement" class="announcement-section">
+                <div class="content">
+                    <div class="announcement-header">Latest News</div>
+                    <div class="announcement-subtitle">By Med Rayen Bouazizi<br>August 1, 2024 - 10:00 AM, Online</div>
+                    <div class="announcement-content">
+                        We are pleased to announce that our Math Olympiad site is now published on Uptodown! Download
+                        our app now to explore the <span class="highlight">new features and enhancements</span>. This
+                        version includes updates and additions not available on the site.
+                    </div>
+                    <div class="extra-info">
+                        <p><strong>Time:</strong> August 3, 2024 - 10:00 AM</p>
+                        <p><strong>Location:</strong> Online</p>
+                        <p><strong>Updates Include:</strong></p>
+                        <ul>
+                            <li>New interactive math challenges</li>
+                            <li>Improved user interface with enhanced navigation</li>
+                            <li>Exclusive access to premium content</li>
+                        </ul>
+                        <p>Thank you to all our users for your unwavering support!</p>
+                    </div>
+                </div>
             </section>
             <section id="developments" class="developments-section">
                 <h2>Recent Developments</h2>
@@ -276,78 +351,64 @@ body {
                     <p class="date-published">August 3, 2024</p>
                     <p class="author">By Med Rayen Bouazizi</p>
                     <p>
-                        We are excited to introduce our latest AI platform, designed to enhance productivity and streamline operations across various sectors. The platform leverages state-of-the-art machine learning algorithms to deliver real-time insights and analytics.
+                        We are excited to introduce our latest AI platform, designed to enhance productivity and
+                        streamline operations across various sectors. The platform leverages state-of-the-art machine
+                        learning algorithms to deliver real-time insights and analytics.
                     </p>
                 </article>
                 <article class="development-article">
                     <h3>Partnership with Leading Tech Companies</h3>
-                    <p class="date-published">July 28, 2024</p>
-                    <p class="author">By Med Rayen Bouazizi</p>
+                    <p class="date-published">August 3, 2024</p>
                     <p>
-                        Quantum Nexus Labs has partnered with several leading technology firms to collaborate on cutting-edge projects. This strategic alliance will drive innovation and foster a culture of creativity and excellence.
-                    </p>
-                </article>
-                <article class="development-article">
-                    <h3>Improvement in Data Security Measures</h3>
-                    <p class="date-published">July 20, 2024</p>
-                    <p class="author">By Med Rayen Bouazizi</p>
-                    <p>
-                        Our company has made significant improvements in data security measures, ensuring that our clients' information remains protected against emerging threats. This enhancement is part of our ongoing commitment to safeguarding data integrity.
+                        We are proud to announce our partnership with several leading technology companies to further
+                        drive innovation and development in the industry. This collaboration aims to foster the exchange
+                        of knowledge and resources to create groundbreaking solutions.
                     </p>
                 </article>
             </section>
             <section id="technology" class="technology-section">
-                <h2>Technology Updates</h2>
+                <h2>Technology Insights</h2>
                 <article class="technology-article">
-                    <h3>Advancements in Machine Learning</h3>
+                    <h3>Advancements in Quantum Computing</h3>
                     <p class="date-published">August 3, 2024</p>
                     <p class="author">By Med Rayen Bouazizi</p>
                     <p>
-                        Our latest machine learning models have achieved unprecedented accuracy and speed, setting new industry standards. These advancements are paving the way for more intelligent and adaptable systems.
+                        Quantum computing is revolutionizing the tech industry with its ability to process complex
+                        calculations at unprecedented speeds. Researchers are exploring new algorithms and applications
+                        to leverage the full potential of quantum computing in various fields, including cryptography,
+                        healthcare, and finance.
                     </p>
                 </article>
                 <article class="technology-article">
-                    <h3>Exploring the Future of AI</h3>
-                    <p class="date-published">July 30, 2024</p>
-                    <p class="author">By Med Rayen Bouazizi</p>
+                    <h3>Exploring the Future of Blockchain Technology</h3>
+                    <p class="date-published">August 3, 2024</p>
                     <p>
-                        As we look to the future, Quantum Nexus Labs is dedicated to exploring the vast potential of AI. Our research focuses on developing ethical and responsible AI technologies that enhance human capabilities.
-                    </p>
-                </article>
-                <article class="technology-article">
-                    <h3>New Innovations in Cloud Computing</h3>
-                    <p class="date-published">July 25, 2024</p>
-                    <p class="author">By Med Rayen Bouazizi</p>
-                    <p>
-                        Our recent innovations in cloud computing aim to provide more efficient and scalable solutions for businesses. These advancements will help organizations manage their resources more effectively and securely.
+                        Blockchain technology is transforming industries by providing secure and transparent
+                        transaction systems. Experts are exploring innovative use cases beyond cryptocurrencies,
+                        including supply chain management, identity verification, and voting systems.
                     </p>
                 </article>
             </section>
             <section id="research" class="research-section">
                 <h2>Research Highlights</h2>
                 <article class="research-article">
-                    <h3>Innovative Research in Quantum Physics</h3>
+                    <h3>Breakthroughs in Artificial Intelligence</h3>
                     <p class="date-published">August 3, 2024</p>
                     <p class="author">By Med Rayen Bouazizi</p>
                     <p>
-                      Med Rayen Bouazizi is excited to announce a special celebration for reaching a milestone of 150 users on our platform. This event is a testament to our commitment to providing quality services and fostering a strong community. Med Rayen Bouazizi is diligently preparing for this occasion, ensuring it will be a memorable experience for everyone involved. We look forward to celebrating this achievement with all our valued users and expressing our gratitude for their continued support.
-
-Feel free to let me know if you nee
-                </article>
-                <article class="research-article">
-                    <h3>Study on Advanced Robotics</h3>
-                    <p class="date-published">July 30, 2024</p>
-                    <p class="author">By Med Rayen Bouazizi</p>
-                    <p>
-                        Our study on advanced robotics explores new methodologies for creating more versatile and intelligent robotic systems. These innovations are expected to have a significant impact on various industries.
+                        Artificial Intelligence continues to make significant strides in various domains, from natural
+                        language processing to computer vision. Researchers are developing new techniques to improve AI
+                        models' accuracy and efficiency, leading to more intelligent and capable systems.
                     </p>
                 </article>
                 <article class="research-article">
-                    <h3>Exploring AI Ethics and Governance</h3>
-                    <p class="date-published">July 25, 2024</p>
-                    <p class="author">By Med Rayen Bouazizi</p>
+                    <h3>Exploring the Frontiers of Space Exploration</h3>
+                    <p class="date-published">August 3, 2024</p>
                     <p>
-                        As AI technologies continue to evolve, our research focuses on the ethical implications and governance of AI systems. We aim to ensure that these technologies are developed and deployed responsibly.
+                        Space exploration is entering a new era with advancements in rocket technology and spacecraft
+                        design. Scientists are working on missions to explore distant planets, study asteroids, and
+                        search for signs of extraterrestrial life. These efforts are expanding our understanding of the
+                        universe and opening up new possibilities for human exploration.
                     </p>
                 </article>
             </section>
@@ -389,6 +450,7 @@ Feel free to let me know if you nee
             <p>&copy; 2024 Quantum Nexus Labs. All rights reserved.</p>
         </div>
     </footer>
+    </div>
     </div>
 </body>
 </html>
