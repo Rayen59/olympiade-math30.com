@@ -137,13 +137,110 @@
             margin: 0;
             font-size: 16px;
         }
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.footer-container {
+    background-color: #204759;
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: left;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h2 {
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #50b3a2;
+}
+
+.socials {
+    margin-top: 15px;
+}
+
+.socials a {
+    color: #ffffff;
+    font-size: 18px;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: #50b3a2;
+}
+
+.new-badge {
+    background-color: #ff4081;
+    color: #ffffff;
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 12px;
+    margin-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #18344d;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 16px;
+}
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <h1>Quantum Nexus Labs Journal</h1>
-            <p class="date">August 1, 2024</p>
+            <p class="date">August 3, 2024</p>
         </header>
         <nav class="navbar">
             <ul>
@@ -158,7 +255,7 @@
                 <h2>Latest News</h2>
                 <article class="news-article">
                     <h3>Site Maintenance and Future Updates</h3>
-                    <p class="date-published">August 1, 2024</p>
+                    <p class="date-published">August 3, 2024</p>
                     <p class="author">By Med Rayen Bouazizi</p>
                     <p>
                         We apologize for the recent maintenance and server issues. The servers have now been corrected and are fully operational. We are excited to announce upcoming changes to our site, including the launch of an Olympiad with medals to be awarded in version 3.1. Our primary focus remains on advancing research and technology.
@@ -166,7 +263,7 @@
                 </article>
                 <article class="news-article">
                     <h3>Future Developments</h3>
-                    <p class="date-published">August 1, 2024</p>
+                    <p class="date-published">August 3, 2024</p>
                     <p>
                         We are committed to enhancing our platform and providing innovative solutions. Stay tuned for more updates and improvements in the near future.
                     </p>
@@ -176,7 +273,7 @@
                 <h2>Recent Developments</h2>
                 <article class="development-article">
                     <h3>Launch of New AI Platform</h3>
-                    <p class="date-published">August 1, 2024</p>
+                    <p class="date-published">August 3, 2024</p>
                     <p class="author">By Med Rayen Bouazizi</p>
                     <p>
                         We are excited to introduce our latest AI platform, designed to enhance productivity and streamline operations across various sectors. The platform leverages state-of-the-art machine learning algorithms to deliver real-time insights and analytics.
@@ -203,7 +300,7 @@
                 <h2>Technology Updates</h2>
                 <article class="technology-article">
                     <h3>Advancements in Machine Learning</h3>
-                    <p class="date-published">August 1, 2024</p>
+                    <p class="date-published">August 3, 2024</p>
                     <p class="author">By Med Rayen Bouazizi</p>
                     <p>
                         Our latest machine learning models have achieved unprecedented accuracy and speed, setting new industry standards. These advancements are paving the way for more intelligent and adaptable systems.
@@ -230,7 +327,7 @@
                 <h2>Research Highlights</h2>
                 <article class="research-article">
                     <h3>Innovative Research in Quantum Physics</h3>
-                    <p class="date-published">August 1, 2024</p>
+                    <p class="date-published">August 3, 2024</p>
                     <p class="author">By Med Rayen Bouazizi</p>
                     <p>
                       Med Rayen Bouazizi is excited to announce a special celebration for reaching a milestone of 150 users on our platform. This event is a testament to our commitment to providing quality services and fostering a strong community. Med Rayen Bouazizi is diligently preparing for this occasion, ensuring it will be a memorable experience for everyone involved. We look forward to celebrating this achievement with all our valued users and expressing our gratitude for their continued support.
@@ -255,9 +352,43 @@ Feel free to let me know if you nee
                 </article>
             </section>
         </main>
-        <footer class="footer">
+         <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>Quantum Nexus Labs</h2>
+                <p>
+                    Quantum Nexus Labs is an innovative company dedicated to the research and development of advanced
+                    technological solutions. Our mission is to push the boundaries of technology to deliver world-class products
+                    and services.
+                </p>
+                <div class="socials">
+                    <a href="https://www.facebook.com/profile.php?id=100083277064965&locale=en_US"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Products and Services</h2>
+                <ul>
+           
+                    <li><a href="https://rayen59.github.io/society.com/">Quantum Nexus Labs <span class="new-badge">NEW</span></a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:rayenbouazizi336@gmail.com">rayenbouazizi336@gmail.com</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Tunisia</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2024 Quantum Nexus Labs. All rights reserved.</p>
-        </footer>
+        </div>
+    </footer>
     </div>
 </body>
 </html>
