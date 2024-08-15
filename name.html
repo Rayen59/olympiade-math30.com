@@ -1,204 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to Rafik Zeraoulia's Book</title>
+    <title>About Prof. Hani</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #ffcccc, #ffe6e6, #e6f7ff, #ccf2ff);
-            background-size: 400% 400%;
-            animation: backgroundAnimation 10s ease infinite;
-            color: #333;
+            background: linear-gradient(135deg, #f6d365, #fda085);
             margin: 0;
-            padding: 20px;
-            line-height: 1.8;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        @keyframes backgroundAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        h1 {
-            color: #ff5733;
+            padding: 0;
+            color: #333;
             text-align: center;
-            animation: colorChange 3s infinite alternate;
-            font-size: 2.5em;
-            margin-bottom: 20px;
         }
-
-        @keyframes colorChange {
-            0% {
-                color: #ff5733;
-            }
-
-            33% {
-                color: #33c4ff;
-            }
-
-            66% {
-                color: #9b59b6;
-            }
-
-            100% {
-                color: #27ae60;
-            }
+        .profile-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
-
         .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
             margin: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             animation: fadeIn 2s ease-in-out;
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+        h1 {
+            font-size: 36px;
+            color: #3498db;
+            margin-bottom: 20px;
+            animation: textGlow 1.5s infinite alternate;
         }
-
-        .book-image,
-        .author-image {
-            text-align: center;
-            margin: 30px 0;
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
         }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        img:hover {
-            transform: scale(1.05);
-        }
-
-        .author-info {
-            margin: 20px 0;
-        }
-
-        .book-link-container {
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px;
-            border: 2px dashed #ff5733;
-            border-radius: 12px;
-            background-color: #f9f9f9;
-        }
-
-        .link {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .link:hover {
-            color: #ff5733;
-        }
-
         .highlight {
-            color: #ff5733;
             font-weight: bold;
+            color: #e74c3c;
         }
-
-        .gratitude {
-            background-color: #eaf2f8;
-            border: 2px solid #27ae60;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 40px;
-            text-align: center;
-            color: #2c3e50;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            animation: colorPulse 4s infinite alternate;
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #3498db;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
         }
-
-        @keyframes colorPulse {
-            0% {
-                border-color: #27ae60;
-            }
-
-            50% {
-                border-color: #3498db;
-            }
-
-            100% {
-                border-color: #9b59b6;
-            }
+        .button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+            to { text-shadow: 0 0 20px rgba(255, 255, 255, 0.9); }
         }
     </style>
 </head>
-
 <body>
-    <h1>Discover Rafik Zeraoulia's Book</h1>
+
+    <a href="https://ibb.co/3z3Pmb3">
+        <img src="https://i.ibb.co/q5S2Y8S/Screenshot-2024-08-15-035411.png" alt="Prof. Hani" class="profile-image">
+    </a>
     <div class="container">
-        <p>Rafik Zeraoulia's book is a treasure trove of advanced math Olympiad problems. It's designed to enhance your logical thinking and problem-solving skills. The book is a must-have for anyone looking to build extraordinary reflexes and methodology in mathematics. This book opens doors to new dimensions of mathematical understanding, inviting readers to explore the uncharted territories of logic and reason.</p>
-
-        <div class="book-image">
-            <img src="https://i.ibb.co/DY90SyL/ca7307d2-5995-433d-9083-301d6329dfb7.jpg" alt="Book Cover">
-        </div>
-
-        <div class="book-link-container">
-            <a href="https://drive.google.com/file/d/19a-kk7u08B7WMI70n8kOp89vx7CGnsTU/view?usp=drivesdk" class="link">Download the Book</a>
-        </div>
-
-        <p class="author-info">
-            Dr. Rafik Zeraoulia is not only a <span class="highlight">professor and researcher</span> in mathematics but also a pioneer whose discoveries have applications in various fields, including medicine. His work is a beacon of inspiration, illuminating paths to understanding that were once cloaked in mystery. With a heart set on discovery, he has explored chaotic dynamics and validated Yitang Zhang's Landau-Siegel zero theorem, an achievement detailed in his publication "<a href="https://link.springer.com/article/10.1140/epjp/s13360-024-04082-y" class="link">Chaotic Dynamics and Zero Distribution</a>."
-        </p>
-
-        <div class="author-image">
-            <img src="https://i.ibb.co/GHXzDn6/Screenshot-2024-08-07-024611.png" alt="Dr. Rafik Zeraoulia">
-        </div>
-
-        <p class="author-info">
-            Dr Rafik is a dedicated high school mathematics teacher with over ten years of experience in Algeria. His passion for mathematics drives him to inspire and educate young minds. Like a sculptor chiseling away to reveal hidden beauty, Rafik shapes his students' minds with the tools of knowledge and curiosity. Since 2008, he has actively pursued research in dynamical systems, number theory, probability, and statistics, exploring realms of thought where few dare to venture.
-        </p>
-
-        <p class="author-info">
-            He takes pride in discovering the Zeraoulia sequences, acknowledged in the On-Line Encyclopedia of Integer Sequences (OEIS). He authored "<a href="https://link-to-math-olympiad-book.com" class="link">Math Olympiad for Arabic Countries</a>," a testament to his commitment to nurturing the mathematical minds of tomorrow. As a reviewer for the Journal of Probability and Statistics - Horizon Mathematics, he upholds the standard of scholarly publications, ensuring that knowledge is a flame passed from one generation to the next.
-        </p>
-
-        <p class="author-info">
-            Active in the mathematical community, Dr Rafik contributes on platforms like <a href="https://math.stackexchange.com/users/143906/zeraoulia-rafik" class="link"></a> and <a href="https://mathoverflow.net/users/51189/zeraoulia-rafik" class="link">MathOverflow</a>, and collaborates on the Polymath Project to solve intricate problems collectively. His presence in the mathematical community is like a lighthouse, guiding others through the fog of uncertainty and into the harbor of knowledge.
-        </p>
-
-        <p class="author-info">
-            Looking forward, he aims to explore nonlinear dynamics in encryption methods, furthering mathematical research and education. His vision is a tapestry woven with the threads of innovation and discovery, aiming to foster a world where knowledge transcends borders, inspiring future generations to continue the quest for understanding the mathematical universe.
-        </p>
-
-        <div class="gratitude">
-            <p>
-                "Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding." <br><br>
-                Thank you for joining us on this journey of exploration and discovery in the realm of mathematics. We hope Rafik Zeraoulia's work inspires you to dive deeper into the world of mathematical wonders and endless possibilities.
-            </p>
-        </div>
+        <h1>About Prof. Hani</h1>
+        <p>Prof. Hani is a <span class="highlight">mathematics professor</span> who excels in solving a variety of Math Olympiad problems. He shares his expertise and solutions on his <a href="https://www.youtube.com/@profhani1435" class="button" target="_blank">YouTube Channel</a>. His videos offer valuable insights and guidance to students and enthusiasts seeking to master mathematical challenges.</p>
+        <p>Through his <span class="highlight">engaging tutorials</span> and problem-solving sessions, Prof. Hani helps viewers tackle complex problems and improve their skills in mathematics. Whether you're preparing for competitions or simply love solving math problems, his channel is a great resource.</p>
     </div>
 </body>
-
 </html>
 
